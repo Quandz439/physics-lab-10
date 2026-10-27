@@ -205,7 +205,7 @@ window.addEventListener('resize',()=>{drawMotion();drawGraph();});
 renderQuiz();updateBest();drawMotion();
 
 // ===== Advanced virtual laboratory interactions =====
-const fmt=(n,d=2)=>Number(n).toLocaleString('vi-VN',{maximumFractionDigits:d,minimumFractionDigits:d});
+// Dùng chung hàm fmt(n) đã khai báo ở phần máy tính công thức để tránh lỗi khai báo trùng.
 let fallProgress=0,fallTimer=null;
 function drawFall(){
  const c=$('fallCanvas');if(!c)return;const ctx=c.getContext('2d'),w=c.width,h=c.height;
