@@ -43,21 +43,83 @@
 @media(max-width:760px){.projectile-layout{grid-template-columns:1fr}}
 @media(max-width:420px){.projectile-readout{grid-template-columns:1fr}}
 
+
+/* Presentation-first visual refresh */
+:root{--bg:#071426;--panel:#0d2038;--panel2:#122b49;--gold:#f4c96b;--text:#f4f7fb;--muted:#b5c3d5;--line:#29425f;--blue:#78d6f5;--green:#80e0ba;--shadow:0 22px 65px #02081755}
+body{background:radial-gradient(ellipse at 88% 4%,#193c61 0,transparent 34%),radial-gradient(ellipse at 5% 35%,#102b4a 0,transparent 32%),var(--bg);letter-spacing:.005em}
+.topbar{background:#071426d9;border-bottom-color:#2b4562}
+.brand{letter-spacing:2.3px}.brand span{color:var(--gold)}
+.navlinks a{font-weight:650;transition:color .2s}
+.hero{padding:clamp(58px,8vw,112px) 0 60px;gap:clamp(25px,5vw,70px)}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid #f4c96b55;background:#f4c96b0d;border-radius:999px;padding:8px 13px;letter-spacing:1.7px}
+.hero h1{font-size:clamp(3rem,7.3vw,6.4rem);letter-spacing:-.065em}
+.hero h1 span{background:linear-gradient(100deg,#ffe6a2,var(--gold) 52%,#e6a83d);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:600px;font-size:clamp(1rem,1.6vw,1.2rem);line-height:1.85}
+.orbital{min-height:350px;border-radius:32px;background:radial-gradient(circle at 50% 45%,#f4c96b12,transparent 45%),linear-gradient(145deg,#122b49cc,#081629);border-color:#45617e;box-shadow:0 25px 90px #0004,inset 0 1px #ffffff0b}
+.planet{width:106px;height:106px;box-shadow:0 0 80px #f4c96b55}
+.btn{transition:transform .2s,box-shadow .2s,filter .2s}.btn:hover{transform:translateY(-3px);box-shadow:0 12px 28px #f4c96b2a;filter:brightness(1.04)}
+.btn.secondary{border-color:#4a6380}
+.stats{gap:16px;margin-bottom:32px}
+.stat{border-radius:16px;background:linear-gradient(145deg,#102642,#0b1c31);border-color:#2b4562;padding:20px 22px}
+.stat strong{font-size:1.55rem;letter-spacing:.04em}
+.section{padding:48px 0 58px}
+.section-head{margin-bottom:28px}
+.section-head .eyebrow{letter-spacing:2.2px}
+.section h2{letter-spacing:-.035em}
+.card{background:linear-gradient(145deg,#10243d,#0b1b30);border-color:#29425f;border-radius:20px;box-shadow:0 14px 42px #0002;transition:transform .22s,border-color .22s,box-shadow .22s}
+.card:hover{border-color:#b99b5b;box-shadow:0 20px 50px #0003}
+.lesson{position:relative;overflow:hidden;min-height:190px}
+.lesson:after{content:"";position:absolute;right:-38px;bottom:-58px;width:125px;height:125px;border:1px solid #f4c96b26;border-radius:50%;box-shadow:0 0 0 18px #f4c96b08,0 0 0 38px #f4c96b05;pointer-events:none}
+.lesson h3,.card h3{color:#f7d98d}
+.number{letter-spacing:2px}
+.callout{border-left-color:var(--gold);background:#f4c96b0c}
+.formula-card{background:linear-gradient(145deg,#10243d,#0b1b30);border-color:#29425f}
+.formula-card .formula{color:var(--gold)}
+.search,.field input,.field select{border-color:#344f6e}
+.search:focus,.field input:focus,.field select:focus{border-color:var(--gold);outline-color:var(--gold)}
+.projectile-canvas,.lab-canvas,.canvas-wrap{box-shadow:inset 0 0 28px #0002}
+.footer{border-top-color:#29425f}
+.roadmap-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.roadmap-step{position:relative;padding:20px 17px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(155deg,#122b49,#0a1b30);min-height:190px}
+.roadmap-step span{font-size:.7rem;font-weight:850;letter-spacing:1.2px;color:var(--gold)}
+.roadmap-step h3{font-size:1.04rem;line-height:1.3;margin:15px 0 9px}
+.roadmap-step p{color:var(--muted);font-size:.9rem;margin:0}
+.slide-mode{background:#071426}
+.slide-mode #roadmap{display:none!important}
+.slide-mode .slide-card{border:1px solid #3b5574;background:radial-gradient(ellipse at 100% 0%,#1b3b5d 0,transparent 42%),linear-gradient(145deg,#10243d,#08172a);box-shadow:0 35px 100px #0005}
+.slide-mode .slide-card h2{color:#f7d98d;letter-spacing:-.04em}
+.slide-mode .slide-card .eyebrow{color:var(--gold)}
+.slide-controls .btn:disabled{opacity:.35;cursor:not-allowed}
+@media(max-width:1000px){.roadmap-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.roadmap-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding-top:55px}.orbital{min-height:260px}}
+@media(max-width:480px){.roadmap-grid{grid-template-columns:1fr}.roadmap-step{min-height:auto}.stats{grid-template-columns:1fr}.stat{display:flex;align-items:center;gap:14px}.stat strong{min-width:36px}}
+
 </style>
 </head>
 <body>
 <header class="topbar"><div class="wrap nav">
 <a class="brand" href="#home">PHYSICS <span>LAB.</span></a>
 <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">☰</button>
-<nav class="navlinks" id="navlinks"><a href="#lessons">Bài học</a><a href="#tools">Máy tính</a><a href="#simulator">Đồ thị</a><a href="#advancedLab">Phòng thí nghiệm</a><a href="#projectileLab">Ném ngang</a><a href="#formulaLibrary">Công thức</a><a href="#quiz">Trắc nghiệm</a></nav>
+<nav class="navlinks" id="navlinks"><a href="#roadmap">Lộ trình trình bày</a><a href="#lessons">Nội dung</a><a href="#tools">Máy tính</a><a href="#simulator">Đồ thị</a><a href="#advancedLab">Phòng thí nghiệm</a><a href="#projectileLab">Ném ngang</a><a href="#formulaLibrary">Công thức</a><a href="#quiz">Trắc nghiệm</a></nav>
 <button class="iconbtn" id="themeToggle" aria-label="Đổi giao diện">☼</button>
 </div></header>
 <main class="wrap" id="home">
 <section class="hero">
-<div><div class="eyebrow">Không gian khám phá khoa học</div><h1>VẬT LÝ 10.<br><span>Hiểu bản chất.</span></h1><p class="lead">Khám phá các quy luật vật lý bằng mô phỏng trực quan, công cụ tính toán và câu hỏi tương tác. Học để hiểu — không chỉ học thuộc công thức.</p><div class="actions"><a class="btn" href="#lessons">Khám phá bài học ↘</a><button class="btn secondary" id="startPresentation">▶ Trình chiếu</button></div></div>
+<div><div class="eyebrow">BÀI THUYẾT TRÌNH TƯƠNG TÁC · VẬT LÍ 10</div><h1>VẬT LÝ 10.<br><span>Hiểu bản chất.</span></h1><p class="lead">Từ câu hỏi thực tế đến công thức và thí nghiệm ảo: cùng khám phá cách các quy luật vật lý giải thích thế giới xung quanh. Có thể tự học hoặc bật chế độ trình chiếu để thuyết trình trước lớp.</p><div class="actions"><button class="btn" id="startPresentation">▶ Bắt đầu bài thuyết trình</button><a class="btn secondary" href="#roadmap">Xem lộ trình ↘</a></div></div>
 <div class="orbital" aria-label="Minh họa quỹ đạo hành tinh"><div class="orbit"></div><div class="orbit two"></div><div class="planet"></div><div class="satellite"></div><div class="orbital-label">OBSERVE · EXPERIMENT · UNDERSTAND</div></div>
 </section>
 <section class="stats"><div class="stat"><strong>01</strong><span>Học qua trực quan</span></div><div class="stat"><strong>02</strong><span>Tính toán từng bước</span></div><div class="stat"><strong>03</strong><span>Luyện tập chủ động</span></div></section>
+
+<section class="section roadmap" id="roadmap">
+  <div class="section-head"><div><div class="eyebrow">Presentation roadmap · 05 phần</div><h2>Lộ trình bài thuyết trình</h2><p>Đi từ câu hỏi thực tế đến mô hình, thí nghiệm và kết luận — giống một bài trình bày khoa học có mở đầu, nội dung và tổng kết.</p></div></div>
+  <div class="roadmap-grid">
+    <article class="roadmap-step"><span>01 / MỞ ĐẦU</span><h3>Vật lý quanh ta</h3><p>Đặt câu hỏi: vì sao vật chuyển động nhanh dần, chậm dần hoặc đổi hướng?</p></article>
+    <article class="roadmap-step"><span>02 / KIẾN THỨC</span><h3>Khái niệm cốt lõi</h3><p>Hệ thống hóa đại lượng, công thức và định luật quan trọng của Vật lí 10.</p></article>
+    <article class="roadmap-step"><span>03 / MINH HỌA</span><h3>Mô phỏng trực quan</h3><p>Thay đổi thông số, quan sát quỹ đạo và đồ thị để kiểm tra dự đoán.</p></article>
+    <article class="roadmap-step"><span>04 / VẬN DỤNG</span><h3>Tính toán & giải thích</h3><p>Dùng dữ kiện để tính kết quả, nêu đơn vị và giải thích ý nghĩa vật lý.</p></article>
+    <article class="roadmap-step"><span>05 / KẾT LUẬN</span><h3>Ôn tập & thảo luận</h3><p>Chốt thông điệp chính, trả lời câu hỏi và kiểm tra mức độ hiểu bài.</p></article>
+  </div>
+</section>
 <section class="section" id="lessons"><div class="section-head"><div><div class="eyebrow">Explore topics</div><h2>Khám phá kiến thức</h2></div><input class="search" id="lessonSearch" placeholder="Tìm chủ đề..." aria-label="Tìm chủ đề bài học"></div>
 <div class="grid" id="lessonGrid">
 <article class="card lesson" data-search="động học quãng đường độ dịch chuyển vận tốc gia tốc"><div class="number">TOPIC 01</div><h3>Động học</h3><p>Quãng đường, độ dịch chuyển, tốc độ, vận tốc, gia tốc và đồ thị chuyển động.</p></article>
@@ -225,12 +287,15 @@ $('nextQuestion').addEventListener('click',()=>{if(!answered){$('quizFeedback').
 $('restartQuiz').addEventListener('click',()=>{qi=0;score=0;$('quizScore').textContent='0 / '+questions.length;$('nextQuestion').disabled=false;renderQuiz();updateBest();});
 function updateBest(){const b=localStorage.getItem('physicsLabBest');$('bestScore').textContent='Điểm tốt nhất đã lưu: '+(b===null?'chưa có':b+' / '+questions.length);}
 const slides=[
- {t:'Vật lý 10: Khám phá quy luật chuyển động',p:'Vật lý giúp chúng ta mô tả, giải thích và dự đoán các hiện tượng trong tự nhiên bằng quan sát, thí nghiệm và mô hình.'},
- {t:'1. Đại lượng chuyển động',p:'Phân biệt quãng đường và độ dịch chuyển; tốc độ và vận tốc. Luôn chọn hệ quy chiếu và chiều dương trước khi giải bài toán.'},
- {t:'2. Gia tốc và đồ thị',p:'Gia tốc cho biết vận tốc thay đổi nhanh hay chậm. Với gia tốc không đổi: v = v₀ + at và Δx = v₀t + ½at².'},
- {t:'3. Lực làm thay đổi chuyển động',p:'Định luật II Newton: hợp lực tác dụng lên vật bằng khối lượng nhân gia tốc, theo dạng vectơ: ΣF = ma.'},
- {t:'4. Kết luận và thảo luận',p:'Hãy dự đoán kết quả trước khi chạy mô phỏng, ghi nhận dữ kiện rồi giải thích bằng công thức và các định luật vật lý.'}
-];let si=0;
+ {t:'VẬT LÍ 10 · Khám phá quy luật tự nhiên',p:'Bài thuyết trình tương tác: quan sát hiện tượng, đặt câu hỏi, xây dựng mô hình và kiểm chứng bằng công thức. Thông điệp chính: vật lý không chỉ là phép tính — đó là cách giải thích thế giới.'},
+ {t:'01 · Vì sao cần học vật lý?',p:'Từ xe tăng tốc, quả bóng bay theo quỹ đạo đến va chạm giữa hai vật, các hiện tượng đều có thể được mô tả bằng đại lượng và quy luật. Câu hỏi dẫn dắt: ta cần đo những gì để giải thích chuyển động?'},
+ {t:'02 · Mô tả chuyển động',p:'Quãng đường cho biết độ dài đường đi; độ dịch chuyển cho biết sự thay đổi vị trí có hướng. Tốc độ trung bình = quãng đường / thời gian. Vận tốc trung bình = độ dịch chuyển / thời gian. Luôn nêu đơn vị và chiều dương.'},
+ {t:'03 · Vận tốc và gia tốc',p:'Với gia tốc không đổi: v = v₀ + at; Δx = v₀t + ½at². Đồ thị vận tốc–thời gian giúp nhìn thấy vận tốc thay đổi ra sao. Hãy thử đổi v₀ và a trong mô phỏng để so sánh dự đoán với kết quả.'},
+ {t:'04 · Lực giải thích sự thay đổi',p:'Định luật II Newton: tổng hợp lực ΣF = ma. Với cùng một hợp lực, vật có khối lượng nhỏ hơn sẽ có gia tốc lớn hơn. Trong phòng thí nghiệm ảo, thay đổi khối lượng và hợp lực để quan sát hướng, độ lớn gia tốc.'},
+ {t:'05 · Ném ngang: từ mô hình đến dự đoán',p:'Chuyển động ném ngang là sự kết hợp của chuyển động đều theo phương ngang và rơi tự do theo phương thẳng đứng. Thời gian rơi t = √(2h/g), tầm xa L = v₀t. Khi tăng vận tốc ngang mà giữ nguyên độ cao, tầm xa tăng nhưng thời gian rơi không đổi.'},
+ {t:'06 · Thực hành và kiểm chứng',p:'Quy trình khoa học: dự đoán → thay đổi một thông số → chạy mô phỏng → ghi kết quả → giải thích bằng công thức. Mô phỏng giúp hình dung quy luật nhưng không thay thế hoàn toàn thí nghiệm thực tế.'},
+ {t:'07 · Kết luận & câu hỏi thảo luận',p:'Hãy nhớ ba điều: xác định đúng đại lượng và đơn vị; chọn công thức phù hợp với điều kiện bài toán; kiểm tra xem kết quả có hợp lý không. Thảo luận: nếu tăng gấp đôi vận tốc ném ngang nhưng giữ độ cao, tầm xa thay đổi thế nào?'}
+]let si=0;
 function renderSlide(){const s=slides[si];$('slideTitle').textContent=s.t;$('slideBody').innerHTML='<p>'+s.p+'</p>';$('slideCount').textContent=(si+1)+' / '+slides.length;$('prevSlide').disabled=si===0;$('nextSlide').textContent=si===slides.length-1?'Quay lại đầu ↺':'Tiếp →';}
 function openPresentation(){document.body.classList.add('slide-mode');$('presentation').classList.remove('hidden');si=0;renderSlide();if(document.documentElement.requestFullscreen)document.documentElement.requestFullscreen().catch(()=>{});}
 function closePresentation(){document.body.classList.remove('slide-mode');$('presentation').classList.add('hidden');if(document.fullscreenElement&&document.exitFullscreen)document.exitFullscreen().catch(()=>{});}
