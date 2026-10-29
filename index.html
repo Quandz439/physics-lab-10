@@ -31,6 +31,18 @@
 @media(max-width:760px){.lab-grid{grid-template-columns:1fr}.formula-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){.formula-grid{grid-template-columns:1fr}.lab-controls{grid-template-columns:1fr}.lab-canvas{min-height:150px}}
 
+
+/* Projectile lab upgrade */
+.projectile-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
+.projectile-panel{min-width:0}
+.projectile-canvas{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:14px;background:#0b192b;margin:14px 0}
+.projectile-readout{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.projectile-metric{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px}
+.projectile-metric span{display:block;color:var(--muted);font-size:.78rem}
+.projectile-metric strong{color:var(--gold);font-variant-numeric:tabular-nums}
+@media(max-width:760px){.projectile-layout{grid-template-columns:1fr}}
+@media(max-width:420px){.projectile-readout{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -120,6 +132,31 @@
     <article class="formula-card" data-formula="rơi tự do độ cao thời gian trọng trường"><h3>Rơi tự do từ nghỉ</h3><div class="formula">h = ½gt²</div><p>Chỉ dùng cho mô hình thả rơi từ nghỉ, bỏ qua lực cản không khí.</p></article>
   </div>
   <p class="callout">Ký hiệu và phạm vi công thức có thể khác nhau tùy sách giáo khoa. Luôn kiểm tra điều kiện áp dụng trước khi dùng.</p>
+</section>
+
+
+<section class="section" id="projectileLab">
+  <div class="section-head"><div><div class="eyebrow">Experiment 04 · Projectile motion</div><h2>Mô phỏng ném ngang</h2><p>Điều chỉnh độ cao và vận tốc ban đầu để quan sát quỹ đạo, thời gian rơi và tầm xa. Bỏ qua lực cản không khí.</p></div><span class="pill">LIVE SIMULATION</span></div>
+  <div class="projectile-layout">
+    <div class="card projectile-panel">
+      <div class="field"><label for="projectileHeight">Độ cao ban đầu: <b id="projectileHeightLabel">20 m</b></label><input class="range" id="projectileHeight" type="range" min="5" max="50" value="20" step="1"></div>
+      <div class="field"><label for="projectileSpeed">Vận tốc ném ngang: <b id="projectileSpeedLabel">8 m/s</b></label><input class="range" id="projectileSpeed" type="range" min="2" max="20" value="8" step="1"></div>
+      <div class="controls"><button class="btn" id="projectileRun">▶ Bắt đầu</button><button class="btn secondary" id="projectileReset">↺ Đặt lại</button></div>
+      <canvas class="projectile-canvas" id="projectileCanvas" width="720" height="360" aria-label="Mô phỏng quỹ đạo ném ngang"></canvas>
+      <p class="muted" id="projectileStatus" aria-live="polite">Sẵn sàng chạy mô phỏng.</p>
+    </div>
+    <div class="card projectile-panel">
+      <div class="number">PHÂN TÍCH KẾT QUẢ</div><h3>Công thức ném ngang</h3>
+      <p class="formula">t = √(2h/g)</p><p class="formula">L = v₀t</p><p class="formula">vᵧ = gt</p>
+      <p class="muted">Chọn g = 9,8 m/s². Chuyển động theo phương ngang là đều; theo phương thẳng đứng là rơi tự do.</p>
+      <div class="projectile-readout">
+        <div class="projectile-metric"><span>Thời gian rơi</span><strong id="projectileTime">2,02 s</strong></div>
+        <div class="projectile-metric"><span>Tầm xa</span><strong id="projectileRange">16,16 m</strong></div>
+        <div class="projectile-metric"><span>Tốc độ chạm đất</span><strong id="projectileImpact">22,00 m/s</strong></div>
+      </div>
+      <div class="callout" style="margin-top:14px">Thử tăng vận tốc ném ngang: tầm xa sẽ tăng, nhưng thời gian rơi không đổi nếu độ cao và g không đổi.</div>
+    </div>
+  </div>
 </section>
 
 <section class="section" id="quiz"><div class="section-head"><div><div class="eyebrow">Quick challenge</div><h2>Kiểm tra kiến thức</h2><p>Trả lời câu hỏi nhanh. Điểm được lưu trên trình duyệt của thiết bị này.</p></div></div>
@@ -267,6 +304,55 @@ $('formulaSearch')?.addEventListener('input',e=>{const q=e.target.value.toLocale
 const oldDrawGraph=drawGraph;
 drawGraph=function(){oldDrawGraph();drawAdvancedGraph();};
 renderQuiz();updateBest();drawMotion();drawGraph();drawFall();updateForce();updateCollision();
+
+
+/* Interactive horizontal projectile simulation */
+(()=>{
+ const $p=id=>document.getElementById(id);
+ const canvas=$p('projectileCanvas');
+ if(!canvas)return;
+ const ctx=canvas.getContext('2d');
+ const G=9.8;
+ let progress=0, running=false, frame=null, last=null;
+ const values=()=>({h:Number($p('projectileHeight').value),v:Number($p('projectileSpeed').value)});
+ const fmtP=n=>Number(n.toFixed(2)).toLocaleString('vi-VN',{maximumFractionDigits:2});
+ function draw(){
+   const {h,v}=values(),tEnd=Math.sqrt(2*h/G),range=v*tEnd,impact=Math.sqrt(v*v+2*G*h);
+   $p('projectileHeightLabel').textContent=h+' m';
+   $p('projectileSpeedLabel').textContent=v+' m/s';
+   $p('projectileTime').textContent=fmtP(tEnd)+' s';
+   $p('projectileRange').textContent=fmtP(range)+' m';
+   $p('projectileImpact').textContent=fmtP(impact)+' m/s';
+   const w=canvas.width,H=canvas.height,pad=38,ground=H-pad,left=pad+12,right=w-pad,top=pad;
+   ctx.clearRect(0,0,w,H);ctx.fillStyle='#0b192b';ctx.fillRect(0,0,w,H);
+   ctx.strokeStyle='#29405c';ctx.lineWidth=1;
+   for(let x=left;x<right;x+=40){ctx.beginPath();ctx.moveTo(x,top);ctx.lineTo(x,ground);ctx.stroke();}
+   for(let y=top;y<ground;y+=35){ctx.beginPath();ctx.moveTo(left,y);ctx.lineTo(right,y);ctx.stroke();}
+   ctx.strokeStyle='#70e1b2';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(left,ground);ctx.lineTo(right,ground);ctx.stroke();
+   const scaleX=(right-left)/Math.max(range*1.12,1),scaleY=(ground-top-14)/h;
+   ctx.strokeStyle='#61c7f2';ctx.lineWidth=3;ctx.beginPath();
+   for(let i=0;i<=100;i++){const t=tEnd*i/100,x=left+v*t*scaleX,y=ground-.5*G*t*t*scaleY;i?ctx.lineTo(x,y):ctx.moveTo(x,y);}
+   ctx.stroke();
+   const t=tEnd*progress,x=left+v*t*scaleX,y=ground-.5*G*t*t*scaleY;
+   ctx.fillStyle='#f5c451';ctx.beginPath();ctx.arc(x,Math.max(top,y),9,0,Math.PI*2);ctx.fill();
+   ctx.fillStyle='#f6f8fc';ctx.font='14px system-ui';ctx.fillText('h = '+h+' m',left,top-10);ctx.fillText('L = '+fmtP(range)+' m',Math.max(left,right-120),ground+24);
+   ctx.fillStyle='#b2bfd1';ctx.fillText('x (m)',right-40,top+8);ctx.fillText('Mặt đất',left,ground+24);
+   $p('projectileStatus').textContent=progress>=1?'Vật đã chạm đất. Quỹ đạo được vẽ theo mô hình lý tưởng.':running?'Đang mô phỏng… t = '+fmtP(t)+' s · x = '+fmtP(v*t)+' m · y rơi = '+fmtP(.5*G*t*t)+' m':'Đã sẵn sàng · Thời gian rơi '+fmtP(tEnd)+' s.';
+ }
+ function tick(ts){
+   if(!running)return;
+   if(last===null)last=ts;
+   progress=Math.min(1,progress+(ts-last)/Math.sqrt(2*values().h/G)/1000);
+   last=ts;draw();
+   if(progress>=1){running=false;frame=null;last=null;$p('projectileRun').textContent='▶ Chạy lại';}
+   else frame=requestAnimationFrame(tick);
+ }
+ function stop(){running=false;if(frame!==null)cancelAnimationFrame(frame);frame=null;last=null;}
+ $p('projectileRun').addEventListener('click',()=>{if(running){stop();$p('projectileRun').textContent='▶ Tiếp tục';return;}if(progress>=1)progress=0;running=true;last=null;$p('projectileRun').textContent='Ⅱ Tạm dừng';frame=requestAnimationFrame(tick);});
+ $p('projectileReset').addEventListener('click',()=>{stop();progress=0;$p('projectileRun').textContent='▶ Bắt đầu';draw();});
+ ['projectileHeight','projectileSpeed'].forEach(id=>$p(id).addEventListener('input',()=>{stop();progress=0;$p('projectileRun').textContent='▶ Bắt đầu';draw();}));
+ draw();
+})();
 
 </script>
 </body>
