@@ -459,13 +459,32 @@ body.dark .pill{color:var(--gold);background:#f4c96b0d;border-color:#f4c96b33}
 body.dark .progress{background:#29425f}
 @media(prefers-reduced-motion:reduce){.hero>div:first-child,.orbital,.stats .stat{animation:none!important}.orbit,.satellite,.planet{animation:none!important}.card,.roadmap-step,.formula-card,.btn{transition:none!important}}
 
+
+/* IMMERSIVE SCIENCE GALLERY — ảnh thật, tối ưu responsive */
+.visual-gallery{padding-top:24px}
+.visual-gallery .gallery-heading{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:26px}
+.visual-gallery .gallery-heading p{max-width:560px;color:var(--muted);margin:0}
+.science-gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
+.science-shot{grid-column:span 4;position:relative;isolation:isolate;min-height:280px;overflow:hidden;border-radius:22px;border:1px solid var(--line);background:#0c1728;box-shadow:0 18px 48px rgba(0,0,0,.24);transform:translateZ(0)}
+.science-shot:nth-child(1),.science-shot:nth-child(4){grid-column:span 6;min-height:340px}
+.science-shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .45s;filter:saturate(.86) brightness(.78)}
+.science-shot:after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,rgba(3,8,17,.02) 20%,rgba(3,8,17,.35) 52%,rgba(3,8,17,.94) 100%)}
+.science-shot:hover img{transform:scale(1.055);filter:saturate(1.08) brightness(.9)}
+.science-shot .shot-content{position:absolute;z-index:1;left:0;right:0;bottom:0;padding:24px}
+.science-shot .shot-kicker{display:inline-block;color:#ffe0a0;text-transform:uppercase;letter-spacing:2px;font-size:.7rem;font-weight:850;margin-bottom:8px}
+.science-shot h3{margin:0 0 7px;color:#fff;font-size:clamp(1.2rem,2.2vw,1.7rem);letter-spacing:-.035em}
+.science-shot p{margin:0;max-width:500px;color:#d5dfed;font-size:.93rem;line-height:1.65}
+.gallery-note{margin-top:16px;color:var(--muted);font-size:.83rem}
+@media(max-width:800px){.science-shot,.science-shot:nth-child(1),.science-shot:nth-child(4){grid-column:span 6;min-height:270px}.visual-gallery .gallery-heading{align-items:start;flex-direction:column}}
+@media(max-width:520px){.science-gallery{grid-template-columns:1fr}.science-shot,.science-shot:nth-child(1),.science-shot:nth-child(4){grid-column:span 1;min-height:260px}.science-shot .shot-content{padding:20px}}
+
 </style>
 </head>
 <body>
 <header class="topbar"><div class="wrap nav">
 <a class="brand" href="#home">PHYSICS <span>LAB.</span></a>
 <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">☰</button>
-<nav class="navlinks" id="navlinks"><a href="#physics-intro">Vật lí là gì?</a><a href="#applications">Ứng dụng</a><a href="#research-fields">Lĩnh vực</a><a href="#roadmap">Lộ trình trình bày</a><a href="#lessons">Nội dung</a><a href="#tools">Máy tính</a><a href="#simulator">Đồ thị</a><a href="#advancedLab">Phòng thí nghiệm</a><a href="#projectileLab">Ném ngang</a><a href="#formulaLibrary">Công thức</a><a href="#quiz">Trắc nghiệm</a></nav>
+<nav class="navlinks" id="navlinks"><a href="#physics-intro">Vật lí là gì?</a><a href="#applications">Ứng dụng</a><a href="#visual-gallery">Thư viện ảnh</a><a href="#research-fields">Lĩnh vực</a><a href="#roadmap">Lộ trình trình bày</a><a href="#lessons">Nội dung</a><a href="#tools">Máy tính</a><a href="#simulator">Đồ thị</a><a href="#advancedLab">Phòng thí nghiệm</a><a href="#projectileLab">Ném ngang</a><a href="#formulaLibrary">Công thức</a><a href="#quiz">Trắc nghiệm</a></nav>
 <button class="iconbtn" id="themeToggle" aria-label="Đổi giao diện">☼</button>
 </div></header>
 <main class="wrap" id="home">
@@ -495,6 +514,41 @@ body.dark .progress{background:#29425f}
     <article class="card"><div class="number">05 · NHIỆT HỌC</div><h3>Điều hòa & làm lạnh</h3><p>Kiến thức về nhiệt và truyền nhiệt giúp thiết kế tủ lạnh, điều hòa, hệ thống cách nhiệt và quy trình bảo quản thực phẩm.</p></article>
     <article class="card"><div class="number">06 · VẬT LIỆU</div><h3>Chip & công nghệ mới</h3><p>Vật lí chất rắn và bán dẫn là nền tảng của chip máy tính, cảm biến, đèn LED, pin mặt trời và nhiều thiết bị thông minh.</p></article>
   </div>
+</section>
+
+
+<section class="section visual-gallery" id="visual-gallery">
+  <div class="gallery-heading">
+    <div><div class="eyebrow">VISUAL ATLAS · KHOA HỌC TRỰC QUAN</div><h2>Vật lí qua những khung hình</h2></div>
+    <p>Nhìn thấy thế giới khoa học từ vũ trụ rộng lớn đến công nghệ rất gần gũi trong đời sống. Di chuột lên ảnh để khám phá hiệu ứng chuyển động.</p>
+  </div>
+  <div class="science-gallery">
+    <article class="science-shot">
+      <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1400&q=85" alt="Trái Đất nhìn từ không gian, lớp khí quyển xanh nổi bật" loading="lazy" decoding="async">
+      <div class="shot-content"><span class="shot-kicker">01 · Vũ trụ</span><h3>Nhìn xa hơn bầu trời</h3><p>Trọng lực, quỹ đạo và ánh sáng giúp ta tìm hiểu các hành tinh, ngôi sao và thiên hà.</p></div>
+    </article>
+    <article class="science-shot">
+      <img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=1000&q=85" alt="Tên lửa trong hành trình phóng lên không gian" loading="lazy" decoding="async">
+      <div class="shot-content"><span class="shot-kicker">02 · Cơ học</span><h3>Lực tạo nên chuyển động</h3><p>Định luật Newton giúp giải thích lực đẩy, gia tốc và chuyển động của tên lửa.</p></div>
+    </article>
+    <article class="science-shot">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85" alt="Bảng mạch điện tử với các linh kiện và đường dẫn tín hiệu" loading="lazy" decoding="async">
+      <div class="shot-content"><span class="shot-kicker">03 · Điện tử</span><h3>Thế giới của những con chip</h3><p>Điện học và vật lí bán dẫn là nền tảng của máy tính, điện thoại và cảm biến.</p></div>
+    </article>
+    <article class="science-shot">
+      <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=85" alt="Nhân viên y tế làm việc với thiết bị chẩn đoán hiện đại" loading="lazy" decoding="async">
+      <div class="shot-content"><span class="shot-kicker">04 · Y sinh</span><h3>Khi vật lí hỗ trợ y học</h3><p>Tia X, cộng hưởng từ và các công nghệ tạo ảnh giúp quan sát bên trong cơ thể.</p></div>
+    </article>
+    <article class="science-shot">
+      <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1000&q=85" alt="Các tuabin gió khai thác năng lượng gió trên cánh đồng" loading="lazy" decoding="async">
+      <div class="shot-content"><span class="shot-kicker">05 · Năng lượng</span><h3>Chuyển động thành điện năng</h3><p>Cơ học và điện từ học góp phần phát triển các hệ thống năng lượng sạch.</p></div>
+    </article>
+    <article class="science-shot">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85" alt="Cận cảnh linh kiện trên bo mạch điện tử" loading="lazy" decoding="async">
+      <div class="shot-content"><span class="shot-kicker">06 · Công nghệ</span><h3>Vật lí trong đời sống số</h3><p>Từ cảm biến đến thiết bị thông minh, các nguyên lí vật lí hiện diện trong công nghệ hằng ngày.</p></div>
+    </article>
+  </div>
+  <p class="gallery-note">Ảnh minh họa được tải từ Unsplash; cần kết nối Internet để hiển thị đầy đủ.</p>
 </section>
 
 <section class="section" id="research-fields">
