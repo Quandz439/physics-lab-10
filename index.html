@@ -389,6 +389,76 @@ body.light .orbital-label{color:#566783}
 @media(max-width:390px){.stats{grid-template-columns:1fr}.stat{display:flex;align-items:center;gap:14px}.stat strong{min-width:36px}.actions{flex-direction:column}.hero h1{font-size:3.15rem}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 
+
+/* Bright editorial theme + subtle motion */
+:root{--bg:#f4f7fc;--panel:#ffffff;--panel2:#edf3fb;--gold:#b98212;--text:#172943;--muted:#536781;--line:#d9e3f0;--blue:#1685b7;--green:#16805c;--shadow:0 16px 42px rgba(28,58,96,.09)}
+body{background:radial-gradient(ellipse at 88% 0%,#dcecff 0,transparent 35%),radial-gradient(ellipse at 0% 42%,#fff1cb 0,transparent 28%),linear-gradient(180deg,#f8faff,#eef3fa);color:var(--text)}
+.topbar{background:rgba(248,250,255,.84);border-bottom-color:#d9e3f0;box-shadow:0 4px 24px rgba(32,60,98,.04)}
+.brand span{color:#bd881a}
+.navlinks a{color:#526680}
+.navlinks a:hover{color:#a66d00}
+.hero .eyebrow{color:#93630b;border-color:#d8b35a80;background:#fff8e6}
+.hero h1 span{background:linear-gradient(100deg,#d7a52d,#a66d00 58%,#e2b849);-webkit-background-clip:text;background-clip:text;color:transparent}
+.orbital{background:radial-gradient(circle at 50% 45%,#ffe8a944,transparent 45%),linear-gradient(145deg,#fff,#e7f0fc);border-color:#d3dfed;box-shadow:0 24px 70px rgba(40,75,120,.12),inset 0 1px #fff}
+.orbit{border-color:#c9952d99}.orbit.two{border-color:#4eafd399}
+.planet{box-shadow:0 0 65px #eabf4d66}
+.satellite{box-shadow:0 0 24px #1685b766}
+.stat{background:linear-gradient(145deg,#fff,#f3f7fd);border-color:#dce5f0;box-shadow:0 10px 28px rgba(36,66,104,.05)}
+.stat strong{color:#a9750e}
+.card,.formula-card{background:linear-gradient(145deg,#fff,#f7faff);border-color:#dce5f0;box-shadow:0 12px 34px rgba(31,62,102,.065)}
+.card:hover{transform:translateY(-5px);border-color:#d5b15c;box-shadow:0 20px 42px rgba(31,62,102,.12)}
+.card h3,.lesson h3{color:#8c620f}
+.number{color:#087ca9}
+.callout{color:#465d78;background:linear-gradient(100deg,#fff8e7,#f2f8ff);border-color:#ead9a9;border-left-color:#c18a19}
+.btn{background:linear-gradient(115deg,#f6d77e,#e7b744);color:#172943;box-shadow:0 9px 22px rgba(174,124,18,.17)}
+.btn.secondary{color:#263d59;background:#fff;border-color:#d5dfec}
+.btn:hover{box-shadow:0 14px 28px rgba(174,124,18,.23)}
+.search,.field input,.field select{background:#fff;border-color:#d4dfed;color:#172943}
+.formula{color:#087ca9}
+.result,.lab-output{background:#f0f8ff;color:#304c68;border-color:#d6e9f6}
+.progress{background:#dce6f1}.progress div{background:linear-gradient(90deg,#e3b23e,#1685b7)}
+.roadmap-step{background:linear-gradient(145deg,#fff,#f5f8fd);border-color:#dce5f0;box-shadow:0 12px 32px rgba(31,62,102,.06)}
+.roadmap-step h3{color:#8c620f}
+.footer{border-color:#d9e3f0;color:#63758c}
+.navlinks{background:rgba(255,255,255,.97)}
+.menu-toggle,.iconbtn{background:#fff;color:#243b57;border-color:#d6e1ef}
+.lab-canvas,.projectile-canvas,.canvas-wrap{background:linear-gradient(180deg,#f4f8ff,#e9f1fb);border-color:#d6e1ef}
+.pill{color:#93630b;background:#fff8e6;border-color:#ead9a9}
+.orbit{animation:orbitDrift 18s linear infinite}
+.orbit.two{animation:orbitDrift 25s linear infinite reverse}
+.satellite{animation:satelliteFloat 5s ease-in-out infinite alternate}
+.planet{animation:planetGlow 4s ease-in-out infinite alternate}
+.hero>div:first-child{animation:fadeUp .7s ease both}
+.orbital{animation:fadeUp .9s .12s ease both,orbitalFloat 7s ease-in-out 1s infinite}
+.stats .stat{animation:fadeUp .65s ease both}
+.stats .stat:nth-child(2){animation-delay:.1s}.stats .stat:nth-child(3){animation-delay:.2s}
+.card,.roadmap-step,.formula-card{transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes orbitDrift{from{rotate:0deg}to{rotate:360deg}}
+@keyframes satelliteFloat{from{transform:translate(-5px,5px)}to{transform:translate(8px,-9px)}}
+@keyframes planetGlow{from{filter:saturate(.92);box-shadow:0 0 38px #e8bd4b44}to{filter:saturate(1.15);box-shadow:0 0 72px #e8bd4b77}}
+@keyframes orbitalFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+body.dark{--bg:#0b1930;--panel:#122743;--panel2:#193552;--gold:#f4cb6b;--text:#f4f7fc;--muted:#b8c7da;--line:#2d4765;--blue:#7bd7f5;--green:#80e0ba;--shadow:0 20px 58px #02081755;background:radial-gradient(ellipse at 88% 4%,#193c61 0,transparent 34%),radial-gradient(ellipse at 5% 35%,#102b4a 0,transparent 32%),var(--bg);color:var(--text)}
+body.dark .topbar{background:rgba(9,22,40,.88);border-bottom-color:var(--line)}
+body.dark .navlinks a{color:var(--muted)}body.dark .navlinks a:hover{color:var(--gold)}
+body.dark .hero .eyebrow{color:var(--gold);border-color:#f4c96b55;background:#f4c96b0d}
+body.dark .hero h1 span{background:linear-gradient(100deg,#ffe6a2,var(--gold) 52%,#e6a83d);-webkit-background-clip:text;background-clip:text;color:transparent}
+body.dark .orbital{background:radial-gradient(circle at 50% 45%,#f4c96b12,transparent 45%),linear-gradient(145deg,#122b49cc,#081629);border-color:#45617e}
+body.dark .stat,body.dark .card,body.dark .formula-card,body.dark .roadmap-step{background:linear-gradient(145deg,#10243d,#0b1b30);border-color:#29425f}
+body.dark .card h3,body.dark .lesson h3,body.dark .roadmap-step h3{color:#f7d98d}
+body.dark .number{color:var(--blue)}body.dark .callout{color:var(--muted);background:#f4c96b0c;border-color:#f4c96b33;border-left-color:var(--gold)}
+body.dark .btn{background:var(--gold);color:#152033}body.dark .btn.secondary{background:transparent;color:var(--text);border-color:#4a6380}
+body.dark .search,body.dark .field input,body.dark .field select{background:#0b1930;color:var(--text);border-color:#344f6e}
+body.dark .formula{color:var(--blue);background:transparent;border-color:#29425f}
+body.dark .result,body.dark .lab-output{background:#122b49;color:#c7f8e4;border-color:#29425f}
+body.dark .footer{border-color:#29425f;color:#93a4bf}
+body.dark .navlinks{background:rgba(9,22,40,.98)}
+body.dark .menu-toggle,body.dark .iconbtn{background:#193552;color:var(--text);border-color:#2d4765}
+body.dark .lab-canvas,body.dark .projectile-canvas,body.dark .canvas-wrap{background:linear-gradient(180deg,#0c1a2d,#101f32);border-color:#2d4765}
+body.dark .pill{color:var(--gold);background:#f4c96b0d;border-color:#f4c96b33}
+body.dark .progress{background:#29425f}
+@media(prefers-reduced-motion:reduce){.hero>div:first-child,.orbital,.stats .stat{animation:none!important}.orbit,.satellite,.planet{animation:none!important}.card,.roadmap-step,.formula-card,.btn{transition:none!important}}
+
 </style>
 </head>
 <body>
@@ -572,7 +642,7 @@ body.light .orbital-label{color:#566783}
 const $=id=>document.getElementById(id);
 $('menuToggle').addEventListener('click',()=>$('navlinks').classList.toggle('open'));
 document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>$('navlinks').classList.remove('open')));
-$('themeToggle').addEventListener('click',()=>{document.body.classList.toggle('light');$('themeToggle').textContent=document.body.classList.contains('light')?'☾':'☼';drawMotion();drawGraph();});
+$('themeToggle').addEventListener('click',()=>{document.body.classList.toggle('dark');$('themeToggle').textContent=document.body.classList.contains('dark')?'☼':'☾';drawMotion();drawGraph();});
 $('lessonSearch').addEventListener('input',e=>{const q=e.target.value.toLocaleLowerCase('vi');document.querySelectorAll('.lesson').forEach(card=>{card.style.display=card.dataset.search.includes(q)||card.textContent.toLocaleLowerCase('vi').includes(q)?'':'none';});});
 $('calculate').addEventListener('click',()=>{
  const raw=['v0','acc','time'].map(id=>$(id).value);
