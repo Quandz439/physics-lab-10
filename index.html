@@ -94,6 +94,149 @@ body{background:radial-gradient(ellipse at 88% 4%,#193c61 0,transparent 34%),rad
 @media(max-width:760px){.roadmap-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding-top:55px}.orbital{min-height:260px}}
 @media(max-width:480px){.roadmap-grid{grid-template-columns:1fr}.roadmap-step{min-height:auto}.stats{grid-template-columns:1fr}.stat{display:flex;align-items:center;gap:14px}.stat strong{min-width:36px}}
 
+
+/* ===== PHYSICS LAB 10 · PREMIUM UI REFRESH (CSS-only, giữ nguyên chức năng) ===== */
+:root{
+  --bg:#070d19;
+  --panel:#101b2d;
+  --panel2:#15243a;
+  --gold:#f5c451;
+  --text:#f5f7fc;
+  --muted:#aebbd0;
+  --line:rgba(159,184,220,.17);
+  --blue:#70c9ff;
+  --green:#7ce2ba;
+  --shadow:0 22px 65px rgba(0,0,0,.34);
+}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{
+  background:
+    radial-gradient(ellipse at 12% 0%,rgba(57,104,177,.16),transparent 36rem),
+    radial-gradient(ellipse at 92% 12%,rgba(245,196,81,.08),transparent 28rem),
+    var(--bg);
+  color:var(--text);line-height:1.68;letter-spacing:.005em;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.2;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:42px 42px;
+  mask-image:linear-gradient(to bottom,black,transparent 82%);
+}
+::selection{background:rgba(245,196,81,.3);color:#fff}
+a{transition:color .2s ease,opacity .2s ease}
+.topbar{
+  background:rgba(7,13,25,.82);backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);box-shadow:0 8px 28px rgba(0,0,0,.12)
+}
+.brand{font-weight:850;letter-spacing:-.035em}
+.brand strong,.brand span{color:var(--gold)}
+.navlinks a{font-size:.91rem;font-weight:650;color:#c4cee0}
+.navlinks a:hover,.navlinks a:focus-visible{color:var(--gold)}
+.wrap{width:min(1160px,calc(100% - 40px))}
+.hero{padding-top:clamp(48px,7vw,92px);padding-bottom:clamp(42px,6vw,78px);gap:36px}
+.hero h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.04;letter-spacing:-.065em;max-width:780px}
+.hero h1 span,.hero h1 strong{color:var(--gold)}
+.eyebrow,.pill,.number{
+  border:1px solid rgba(245,196,81,.28);background:rgba(245,196,81,.08);
+  color:var(--gold);font-weight:750;letter-spacing:.08em
+}
+.lead{max-width:680px;color:#c0cce0;font-size:clamp(1rem,1.6vw,1.12rem);line-height:1.85}
+.orbital{
+  border:1px solid rgba(112,201,255,.18);
+  border-radius:30px;background:radial-gradient(circle at 50% 48%,rgba(57,107,173,.18),rgba(10,20,36,.42) 58%,rgba(8,14,26,.65));
+  box-shadow:inset 0 1px rgba(255,255,255,.05),var(--shadow)
+}
+.orbit{border-color:rgba(112,201,255,.24)}
+.planet{box-shadow:0 0 48px rgba(112,201,255,.25)}
+.satellite{box-shadow:0 0 24px rgba(245,196,81,.25)}
+.orbital-label{color:#dce7f8}
+.actions{gap:12px}
+.btn,button,.iconbtn{
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,background .2s ease;
+  font-weight:750
+}
+.btn{
+  border-radius:13px;border:1px solid rgba(245,196,81,.45);
+  background:linear-gradient(135deg,#ffdc7c,#eab23b);color:#101827;
+  box-shadow:0 8px 24px rgba(245,196,81,.12)
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 13px 30px rgba(245,196,81,.2)}
+.btn.secondary{background:rgba(255,255,255,.035);color:var(--text);border-color:var(--line);box-shadow:none}
+.btn.secondary:hover{border-color:rgba(112,201,255,.45);background:rgba(112,201,255,.07)}
+.iconbtn{border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);border-radius:12px}
+.iconbtn:hover{border-color:rgba(245,196,81,.45);color:var(--gold)}
+.stats{gap:14px}
+.stat{
+  background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
+  border:1px solid var(--line);border-radius:18px;padding:18px 20px;
+  box-shadow:0 10px 28px rgba(0,0,0,.1)
+}
+.stat strong{color:var(--gold);font-size:1.65rem;letter-spacing:-.04em}
+.stat span{color:var(--muted)}
+.section{padding:clamp(48px,7vw,84px) 0}
+.section-head{margin-bottom:26px}
+.section h2,.section-head h2{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.15;letter-spacing:-.045em}
+.section-intro{color:var(--muted);max-width:760px;line-height:1.8}
+.roadmap-grid,.grid,.lab-grid,.formula-grid{gap:16px}
+.roadmap-step,.card,.lesson,.callout,.workspace,.lab-card,.projectile-panel,.slide-card,.formula-card{
+  background:linear-gradient(150deg,rgba(21,36,58,.94),rgba(13,24,41,.96));
+  border:1px solid var(--line);border-radius:20px;
+  box-shadow:0 12px 34px rgba(0,0,0,.15);
+  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease
+}
+.roadmap-step:hover,.card:hover,.lesson:hover,.lab-card:hover,.formula-card:hover{
+  transform:translateY(-3px);border-color:rgba(112,201,255,.32);box-shadow:0 18px 42px rgba(0,0,0,.22)
+}
+.roadmap-step{padding:22px}
+.card,.lesson,.lab-card,.formula-card{padding:22px}
+.card h3,.lesson h3,.roadmap-step h3,.lab-card h3,.formula-card h3{letter-spacing:-.02em;line-height:1.35}
+.card p,.lesson p,.roadmap-step p,.formula-card p{color:var(--muted);line-height:1.75}
+.number{display:inline-grid;place-items:center;min-width:34px;min-height:34px;border-radius:10px;margin-bottom:12px}
+.callout{padding:20px 22px;border-left:3px solid var(--gold);background:linear-gradient(100deg,rgba(245,196,81,.09),rgba(16,27,45,.92))}
+.search input,.field input,.field select,.field textarea,input,select,textarea{
+  background:#0a1424;color:var(--text);border:1px solid var(--line);border-radius:12px;
+  outline:none;transition:border-color .2s ease,box-shadow .2s ease
+}
+.search input:focus,.field input:focus,.field select:focus,.field textarea:focus,input:focus,select:focus,textarea:focus{
+  border-color:rgba(112,201,255,.7);box-shadow:0 0 0 3px rgba(112,201,255,.1)
+}
+label,.field label{color:#d5dfef;font-weight:650}
+.muted,.muted p{color:var(--muted)}
+.formula{color:var(--gold);font-weight:800}
+.range{accent-color:var(--gold);cursor:pointer}
+.controls{gap:12px}
+.result,.lab-output,.projectile-readout,.projectile-metric{
+  background:rgba(5,12,23,.55);border:1px solid var(--line);border-radius:14px;padding:14px
+}
+.canvas-wrap,.lab-canvas,.projectile-canvas{
+  overflow:hidden;border:1px solid rgba(112,201,255,.2);border-radius:16px;
+  background:linear-gradient(180deg,#0b1830,#08111f)
+}
+canvas{max-width:100%;border-radius:inherit}
+.lab-value,.projectile-metric strong{color:var(--gold);font-variant-numeric:tabular-nums}
+.progress{background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden}
+.progress>span{background:linear-gradient(90deg,var(--blue),var(--gold));border-radius:99px}
+.slide-card{
+  padding:clamp(24px,5vw,52px);min-height:260px;
+  background:radial-gradient(ellipse at top right,rgba(112,201,255,.1),transparent 55%),linear-gradient(145deg,#142640,#0d1729)
+}
+.slide-card h2{color:var(--gold);font-size:clamp(1.7rem,4vw,3rem);letter-spacing:-.04em}
+.slide-controls{gap:10px}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:28px 0}
+button:disabled,.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media(max-width:760px){
+  .wrap{width:min(100% - 28px,1160px)}
+  .hero{padding-top:38px;gap:24px}
+  .hero h1{font-size:clamp(2.25rem,10vw,3.5rem)}
+  .section{padding:48px 0}
+  .card,.lesson,.lab-card,.formula-card,.roadmap-step{padding:18px}
+  .navlinks{background:rgba(7,13,25,.98);backdrop-filter:blur(16px)}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+}
+
 </style>
 </head>
 <body>
