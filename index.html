@@ -891,47 +891,7 @@ body{overflow-x:hidden;background:radial-gradient(ellipse at 12% 8%,#ffe0ed 0,tr
 <div class="workspace"><div class="card"><div class="field"><label for="simV">Vận tốc ban đầu: <b id="simVLabel">4 m/s</b></label><input class="range" id="simV" type="range" min="-5" max="12" value="4" step="1"></div><div class="field"><label for="simA">Gia tốc: <b id="simALabel">2 m/s²</b></label><input class="range" id="simA" type="range" min="-3" max="4" value="2" step="0.5"></div><div class="controls"><button class="btn" id="runSim">▶ Chạy</button><button class="btn secondary" id="pauseSim">Ⅱ Tạm dừng</button><button class="btn secondary" id="resetSim">↺ Đặt lại</button></div><div class="canvas-wrap"><canvas id="motionCanvas" width="720" height="180" aria-label="Mô phỏng vật chuyển động trên đường thẳng"></canvas></div><p id="simReadout" class="muted" aria-live="polite">t = 0,00 s</p></div>
 <div class="card"><h3>Đồ thị vận tốc – thời gian</h3><div class="canvas-wrap"><canvas id="graphCanvas" width="720" height="300" aria-label="Đồ thị vận tốc theo thời gian"></canvas></div><p class="muted">Đồ thị được dựng từ v = v₀ + at. Đây là mô phỏng minh họa, không phải dữ liệu đo thực nghiệm.</p></div></div></section>
 
-<section class="section" id="advancedLab">
-  <div class="section-head"><div><div class="eyebrow">Virtual physics studio</div><h2>Phòng thí nghiệm ảo</h2><p class="section-intro">Thay đổi thông số để quan sát cách mô hình vật lý phản ứng. Các mô phỏng dùng mô hình lý tưởng hóa, không thay thế thí nghiệm thực tế.</p></div><span class="pill">INTERACTIVE LAB</span></div>
-  <div class="lab-grid">
-    <article class="card lab-card">
-      <div class="number">EXPERIMENT 01 · GRAVITY</div><h3>Rơi tự do</h3><p class="muted">Bỏ qua lực cản không khí; vật được thả từ trạng thái ban đầu đứng yên.</p>
-      <div class="lab-controls">
-        <div><label for="fallHeight">Độ cao ban đầu <span class="lab-value" id="fallHeightVal">20 m</span></label><input id="fallHeight" type="range" min="5" max="80" value="20" step="1"></div>
-        <div><label for="gravity">Gia tốc trọng trường <span class="lab-value" id="gravityVal">9,8 m/s²</span></label><input id="gravity" type="range" min="1" max="15" value="9.8" step="0.1"></div>
-      </div>
-      <canvas class="lab-canvas" id="fallCanvas" width="600" height="230" aria-label="Mô phỏng rơi tự do"></canvas>
-      <div class="controls"><button class="btn" id="fallRun">▶ Thả vật</button><button class="btn secondary" id="fallReset">↺ Đặt lại</button></div>
-      <div class="lab-output" id="fallResult" aria-live="polite">Thời gian rơi lý tưởng: 2,02 s · Tốc độ chạm đất: 19,80 m/s</div>
-    </article>
-    <article class="card lab-card">
-      <div class="number">EXPERIMENT 02 · NEWTON</div><h3>Hợp lực và gia tốc</h3><p class="muted">Mô hình một vật chịu hợp lực theo phương ngang, bỏ qua các lực cản.</p>
-      <div class="lab-controls">
-        <div><label for="forceMass">Khối lượng <span class="lab-value" id="forceMassVal">2 kg</span></label><input id="forceMass" type="range" min="1" max="20" value="2" step="1"></div>
-        <div><label for="netForce">Hợp lực <span class="lab-value" id="netForceVal">10 N</span></label><input id="netForce" type="range" min="-20" max="20" value="10" step="1"></div>
-      </div>
-      <canvas class="lab-canvas" id="forceCanvas" width="600" height="230" aria-label="Minh họa hợp lực tác dụng lên vật"></canvas>
-      <div class="lab-output" id="forceResult" aria-live="polite">Theo định luật II Newton: a = F/m = 5,00 m/s².</div>
-      <p class="muted">Mũi tên biểu diễn hướng của hợp lực; chiều dài mũi tên chỉ mang tính minh họa.</p>
-    </article>
-    <article class="card lab-card">
-      <div class="number">EXPERIMENT 03 · MOMENTUM</div><h3>Va chạm một chiều</h3><p class="muted">Hai vật va chạm dính vào nhau. Giả sử hệ cô lập và tổng động lượng được bảo toàn.</p>
-      <div class="lab-controls">
-        <div><label for="massOne">Khối lượng vật A <span class="lab-value" id="massOneVal">2 kg</span></label><input id="massOne" type="range" min="1" max="10" value="2" step="1"></div>
-        <div><label for="velocityOne">Vận tốc vật A <span class="lab-value" id="velocityOneVal">4 m/s</span></label><input id="velocityOne" type="range" min="-8" max="8" value="4" step="1"></div>
-        <div><label for="massTwo">Khối lượng vật B <span class="lab-value" id="massTwoVal">3 kg</span></label><input id="massTwo" type="range" min="1" max="10" value="3" step="1"></div>
-        <div><label for="velocityTwo">Vận tốc vật B <span class="lab-value" id="velocityTwoVal">−1 m/s</span></label><input id="velocityTwo" type="range" min="-8" max="8" value="-1" step="1"></div>
-      </div>
-      <canvas class="lab-canvas" id="collisionCanvas" width="600" height="190" aria-label="Minh họa hai vật trước và sau va chạm"></canvas>
-      <div class="lab-output" id="collisionResult" aria-live="polite"></div>
-    </article>
-    <article class="card lab-card">
-      <div class="number">DATA EXPLORER · MOTION</div><h3>Khảo sát đồ thị v–t</h3><p class="muted">Đồ thị của chuyển động thẳng biến đổi đều; thay đổi v₀ và a ở mô phỏng phía trên để cập nhật.</p>
-      <canvas class="lab-canvas" id="advancedGraph" width="600" height="290" aria-label="Đồ thị vận tốc theo thời gian với vùng diện tích độ dịch chuyển"></canvas>
-      <div class="lab-output" id="graphInsight" aria-live="polite">Đường thẳng biểu diễn v = v₀ + at. Diện tích có dấu dưới đồ thị là độ dịch chuyển.</div>
-    </article>
-  </div>
-</section>
+
 <section class="section" id="formulaLibrary">
   <div class="section-head"><div><div class="eyebrow">Formula reference</div><h2>Thư viện công thức</h2><p class="section-intro">Tra cứu nhanh các công thức thường gặp trong phần cơ học Vật lý 10. Chú ý đơn vị và quy ước chiều dương khi áp dụng.</p></div><input class="search" id="formulaSearch" placeholder="Tìm công thức..." aria-label="Tìm công thức vật lý"></div>
   <div class="formula-grid" id="formulaGrid">
@@ -952,29 +912,7 @@ body{overflow-x:hidden;background:radial-gradient(ellipse at 12% 8%,#ffe0ed 0,tr
 </section>
 
 
-<section class="section" id="projectileLab">
-  <div class="section-head"><div><div class="eyebrow">Experiment 04 · Projectile motion</div><h2>Mô phỏng ném ngang</h2><p>Điều chỉnh độ cao và vận tốc ban đầu để quan sát quỹ đạo, thời gian rơi và tầm xa. Bỏ qua lực cản không khí.</p></div><span class="pill">LIVE SIMULATION</span></div>
-  <div class="projectile-layout">
-    <div class="card projectile-panel">
-      <div class="field"><label for="projectileHeight">Độ cao ban đầu: <b id="projectileHeightLabel">20 m</b></label><input class="range" id="projectileHeight" type="range" min="5" max="50" value="20" step="1"></div>
-      <div class="field"><label for="projectileSpeed">Vận tốc ném ngang: <b id="projectileSpeedLabel">8 m/s</b></label><input class="range" id="projectileSpeed" type="range" min="2" max="20" value="8" step="1"></div>
-      <div class="controls"><button class="btn" id="projectileRun">▶ Bắt đầu</button><button class="btn secondary" id="projectileReset">↺ Đặt lại</button></div>
-      <canvas class="projectile-canvas" id="projectileCanvas" width="720" height="360" aria-label="Mô phỏng quỹ đạo ném ngang"></canvas>
-      <p class="muted" id="projectileStatus" aria-live="polite">Sẵn sàng chạy mô phỏng.</p>
-    </div>
-    <div class="card projectile-panel">
-      <div class="number">PHÂN TÍCH KẾT QUẢ</div><h3>Công thức ném ngang</h3>
-      <p class="formula">t = √(2h/g)</p><p class="formula">L = v₀t</p><p class="formula">vᵧ = gt</p>
-      <p class="muted">Chọn g = 9,8 m/s². Chuyển động theo phương ngang là đều; theo phương thẳng đứng là rơi tự do.</p>
-      <div class="projectile-readout">
-        <div class="projectile-metric"><span>Thời gian rơi</span><strong id="projectileTime">2,02 s</strong></div>
-        <div class="projectile-metric"><span>Tầm xa</span><strong id="projectileRange">16,16 m</strong></div>
-        <div class="projectile-metric"><span>Tốc độ chạm đất</span><strong id="projectileImpact">22,00 m/s</strong></div>
-      </div>
-      <div class="callout" style="margin-top:14px">Thử tăng vận tốc ném ngang: tầm xa sẽ tăng, nhưng thời gian rơi không đổi nếu độ cao và g không đổi.</div>
-    </div>
-  </div>
-</section>
+
 
 <section class="section" id="quiz"><div class="section-head"><div><div class="eyebrow">Quick challenge</div><h2>Kiểm tra kiến thức</h2><p>Trả lời câu hỏi nhanh. Điểm được lưu trên trình duyệt của thiết bị này.</p></div></div>
 <div class="workspace"><div class="card"><div class="progress"><div id="quizProgress"></div></div><p class="muted" id="quizCount">Câu 1 / 6</p><h3 id="quizQuestion">Một vật đi được 100 m trong 20 s. Tốc độ trung bình là bao nhiêu?</h3><div id="quizOptions"></div><div class="result" id="quizFeedback" aria-live="polite">Chọn một đáp án để xem giải thích.</div><div class="controls" style="margin-top:14px"><button class="btn" id="nextQuestion">Câu tiếp theo →</button><button class="btn secondary" id="restartQuiz">Làm lại</button></div></div>
@@ -1080,6 +1018,7 @@ function drawFall(){
  $('fallResult').textContent='Thời gian rơi lý tưởng: '+fmt(tFall)+' s · Tốc độ chạm đất: '+fmt(Math.sqrt(2*g*height))+' m/s'+(fallProgress>=1?' · Đã chạm đất':'');
 }
 function updateForce(){
+ if(!$('forceCanvas'))return;
  const m=+$('forceMass').value,F=+$('netForce').value,a=F/m;
  $('forceMassVal').textContent=m+' kg';$('netForceVal').textContent=F+' N';
  const c=$('forceCanvas'),ctx=c.getContext('2d'),w=c.width,h=c.height;ctx.clearRect(0,0,w,h);ctx.fillStyle='#0b192b';ctx.fillRect(0,0,w,h);
@@ -1091,6 +1030,7 @@ function updateForce(){
  $('forceResult').textContent='Theo định luật II Newton: a = F/m = '+fmt(a)+' m/s². '+(F===0?'Hợp lực bằng 0 nên gia tốc bằng 0.':(F>0?'Gia tốc hướng sang phải.':'Gia tốc hướng sang trái.'));
 }
 function updateCollision(){
+ if(!$('collisionCanvas'))return;
  const m1=+$('massOne').value,v1=+$('velocityOne').value,m2=+$('massTwo').value,v2=+$('velocityTwo').value;
  ['massOneVal','velocityOneVal','massTwoVal','velocityTwoVal'].forEach((id,i)=>$(id).textContent=[m1+' kg',v1+' m/s',m2+' kg',v2+' m/s'][i].replace('-','−'));
  const vf=(m1*v1+m2*v2)/(m1+m2),pBefore=m1*v1+m2*v2;
