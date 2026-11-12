@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0b1220">
+<meta name="theme-color" content="#fff5f9">
 <title>PHYSICS LAB — Khám phá Vật lý 10</title>
 <style>
 :root{--bg:#09111f;--panel:#111f33;--panel2:#172943;--gold:#f5c451;--text:#f6f8fc;--muted:#b2bfd1;--line:#293b54;--blue:#61c7f2;--green:#70e1b2;--shadow:0 18px 55px #0003}
@@ -478,6 +478,168 @@ body.dark .progress{background:#29425f}
 @media(max-width:800px){.science-shot,.science-shot:nth-child(1),.science-shot:nth-child(4){grid-column:span 6;min-height:270px}.visual-gallery .gallery-heading{align-items:start;flex-direction:column}}
 @media(max-width:520px){.science-gallery{grid-template-columns:1fr}.science-shot,.science-shot:nth-child(1),.science-shot:nth-child(4){grid-column:span 1;min-height:260px}.science-shot .shot-content{padding:20px}}
 
+
+/* ===== PINK SCIENCE · PRESENTATION REDESIGN ===== */
+:root{
+  --bg:#fff5f9;--panel:#ffffff;--panel2:#fff0f6;--gold:#d94683;
+  --text:#39243a;--muted:#786779;--line:#f1cddd;--blue:#9875df;
+  --green:#269d83;--shadow:0 18px 48px rgba(183,83,133,.12);
+}
+html{scroll-padding-top:100px}
+body{
+  color:var(--text);
+  background:
+    radial-gradient(ellipse at 8% 4%,rgba(255,174,207,.48),transparent 34rem),
+    radial-gradient(ellipse at 92% 18%,rgba(211,190,255,.42),transparent 32rem),
+    linear-gradient(180deg,#fff7fb 0%,#fffafd 48%,#fff3f8 100%);
+  line-height:1.75;
+}
+body:before{
+  opacity:.35;
+  background-image:radial-gradient(rgba(218,93,148,.16) 1px,transparent 1px);
+  background-size:24px 24px;
+  mask-image:linear-gradient(to bottom,black,transparent 78%);
+}
+::selection{background:#f6b7d2;color:#47223a}
+.topbar{
+  background:rgba(255,249,252,.84);border-bottom:1px solid #f2d4e2;
+  box-shadow:0 8px 28px rgba(176,86,133,.08)
+}
+.brand,.brand strong,.brand span{color:#bd3976}
+.navlinks a{color:#755b70;font-weight:700}
+.navlinks a:hover,.navlinks a:focus-visible{color:#d13f83}
+.iconbtn,.menu-toggle{background:#fff0f6;color:#9f3269;border-color:#f0c6d9}
+.hero{padding-top:clamp(55px,8vw,108px);padding-bottom:clamp(42px,6vw,78px)}
+.hero .eyebrow,.eyebrow{
+  color:#bd3976;background:rgba(255,225,238,.78);
+  border:1px solid #f1c2d7;border-radius:999px;
+  padding:7px 13px;letter-spacing:.12em
+}
+.hero h1{color:#48283f;letter-spacing:-.065em}
+.hero h1 span{
+  background:linear-gradient(100deg,#e34f91,#a27be5 78%);
+  -webkit-background-clip:text;background-clip:text;color:transparent
+}
+.lead,.section-intro{color:#786779}
+.orbital{
+  border:1px solid #edc6da;border-radius:32px;
+  background:radial-gradient(circle at 50% 45%,#ffd4e6 0,transparent 45%),linear-gradient(145deg,#fff,#f8eafa);
+  box-shadow:0 24px 65px rgba(190,99,151,.16)
+}
+.orbit{border-color:#e78bb5}
+.orbit.two{border-color:#b49be9}
+.planet{background:radial-gradient(circle at 30% 25%,#fff,var(--gold) 42%,#b83d7b);box-shadow:0 0 65px #e77eae66}
+.satellite{background:#a88be8;box-shadow:0 0 24px #a88be888}
+.orbital-label{color:#95617f}
+.btn{
+  color:white;background:linear-gradient(120deg,#e34f91,#bd3976);
+  border:1px solid #d64b89;box-shadow:0 9px 24px rgba(207,67,131,.2)
+}
+.btn:hover{box-shadow:0 14px 30px rgba(207,67,131,.27)}
+.btn.secondary{color:#a83b72;background:#fff;border-color:#edc3d7;box-shadow:none}
+.btn.secondary:hover{background:#fff0f6;border-color:#dc82ae}
+.stats{margin-bottom:25px}
+.stat{
+  background:linear-gradient(145deg,#fff,#fff3f8);border:1px solid #f1d2e0;
+  border-radius:18px;box-shadow:0 10px 28px rgba(177,83,132,.08)
+}
+.stat strong{color:#c43f7d}
+.stat span{color:#806b7c}
+.section{padding:clamp(48px,7vw,82px) 0}
+.section-head{align-items:flex-start}
+.section h2,.section-head h2{color:#4a2c43;letter-spacing:-.045em}
+.section-head p,.card p,.lesson p,.roadmap-step p,.formula-card p{color:#786779}
+.card,.lesson,.roadmap-step,.lab-card,.formula-card,.workspace,.projectile-panel,.callout{
+  color:var(--text);background:linear-gradient(145deg,#fff,#fff4f8);
+  border:1px solid #f0d0df;border-radius:22px;
+  box-shadow:0 13px 34px rgba(177,83,132,.09)
+}
+.card:hover,.lesson:hover,.roadmap-step:hover,.lab-card:hover,.formula-card:hover{
+  transform:translateY(-5px);border-color:#e89abd;
+  box-shadow:0 20px 42px rgba(177,83,132,.15)
+}
+.card h3,.lesson h3,.roadmap-step h3,.lab-card h3,.formula-card h3{color:#a93770}
+.number,.pill{
+  color:#bd3976;background:#ffebf3;border:1px solid #f2c5d9;border-radius:10px
+}
+.callout{border-left:4px solid #d94d8c;background:linear-gradient(100deg,#ffeaf3,#fff8fb)}
+.roadmap-step{min-height:190px}
+.roadmap-step span{color:#c13d7b}
+.search,.field input,.field select,.field textarea,input,select,textarea{
+  color:#493346;background:#fff;border:1px solid #eccbd9
+}
+.search:focus,.field input:focus,.field select:focus,input:focus,select:focus,textarea:focus{
+  border-color:#d94d8c;box-shadow:0 0 0 3px rgba(217,77,140,.12)
+}
+.formula-card .formula{color:#b43d79}
+.quiz-option{color:#50364b;background:#fff0f6;border-color:#f0cddd}
+.quiz-option:hover{border-color:#d94d8c}
+.quiz-option.correct{color:#176b59;background:#e8faf4;border-color:#77cbb1}
+.quiz-option.wrong{color:#a52f55;background:#fff0f3;border-color:#e89ab1}
+.progress{background:#f2dce6}.progress div{background:linear-gradient(90deg,#e34f91,#a987e9)}
+.result,.lab-output{color:#51394d;background:#fff0f6;border-color:#f0cddd}
+.formula{color:#9870d4}
+.lab-canvas,.projectile-canvas,.canvas-wrap,.projectile-canvas{
+  background:#fff5fa;border-color:#eccbd9
+}
+.footer{color:#806b7c;border-top-color:#f0d0df}
+.footer .wrap{padding-top:4px}
+#presentation{position:relative}
+.slide-mode{
+  min-height:100vh;color:#4a2b43;
+  background:
+    radial-gradient(circle at 10% 12%,rgba(255,183,213,.7),transparent 32rem),
+    radial-gradient(circle at 90% 80%,rgba(202,183,255,.55),transparent 30rem),
+    #fff7fb
+}
+.slide-mode #presentation{
+  display:flex!important;min-height:100vh;padding:7vh 5vw;
+  align-items:center;justify-content:center
+}
+.slide-mode .slide-card{
+  position:relative;width:min(100%,1080px);min-height:min(70vh,760px);
+  padding:clamp(28px,7vw,88px);border:1px solid #efc7da;
+  border-radius:32px;background:linear-gradient(145deg,rgba(255,255,255,.97),rgba(255,239,247,.96));
+  box-shadow:0 35px 90px rgba(178,79,132,.18);
+  overflow:hidden
+}
+.slide-mode .slide-card:after{
+  content:"";position:absolute;width:300px;height:300px;right:-120px;top:-135px;
+  border:1px solid #eaa4c5;border-radius:50%;
+  box-shadow:0 0 0 28px #eaa4c51c,0 0 0 58px #eaa4c512;
+  pointer-events:none
+}
+.slide-mode .slide-card .eyebrow{align-self:flex-start;color:#bd3976;background:#ffebf3}
+.slide-mode .slide-card h2{
+  color:#a83270;font-size:clamp(2.3rem,6vw,4.8rem);
+  line-height:1.12;letter-spacing:-.055em;margin:24px 0
+}
+.slide-mode .slide-card p,.slide-mode .slide-card li{
+  color:#70566b;font-size:clamp(1.12rem,2vw,1.55rem);line-height:1.8
+}
+.slide-mode .slide-controls{margin-top:auto;padding-top:35px;flex-wrap:wrap}
+.slide-mode .slide-controls .muted{color:#9b7790;font-weight:800}
+.slide-mode .slide-controls .iconbtn{background:#fff;color:#a83b72}
+.slide-mode .slide-controls .btn.secondary{background:#fff;color:#a83b72}
+.slide-mode .slide-card>p.muted{font-size:.9rem;color:#9b8193}
+.slide-mode .slide-card #slideBody{max-width:850px}
+@media(max-width:800px){
+ .navlinks{background:#fff7fb;border-color:#f0cddd}
+ .hero{grid-template-columns:1fr}
+ .roadmap-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:520px){
+ .wrap{width:min(100% - 28px,1160px)}
+ .roadmap-grid,.stats{grid-template-columns:1fr}
+ .slide-mode #presentation{padding:16px}
+ .slide-mode .slide-card{min-height:82vh;padding:25px;border-radius:22px}
+ .slide-mode .slide-controls{gap:8px}
+ .slide-mode .slide-controls .btn{width:auto}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
 </style>
 </head>
 <body>
@@ -752,14 +914,15 @@ $('nextQuestion').addEventListener('click',()=>{if(!answered){$('quizFeedback').
 $('restartQuiz').addEventListener('click',()=>{qi=0;score=0;$('quizScore').textContent='0 / '+questions.length;$('nextQuestion').disabled=false;renderQuiz();updateBest();});
 function updateBest(){const b=localStorage.getItem('physicsLabBest');$('bestScore').textContent='Điểm tốt nhất đã lưu: '+(b===null?'chưa có':b+' / '+questions.length);}
 const slides=[
- {t:'VẬT LÍ 10 · Khám phá quy luật tự nhiên',p:'Bài thuyết trình tương tác: quan sát hiện tượng, đặt câu hỏi, xây dựng mô hình và kiểm chứng bằng công thức. Thông điệp chính: vật lý không chỉ là phép tính — đó là cách giải thích thế giới.'},
- {t:'01 · Vì sao cần học vật lý?',p:'Từ xe tăng tốc, quả bóng bay theo quỹ đạo đến va chạm giữa hai vật, các hiện tượng đều có thể được mô tả bằng đại lượng và quy luật. Câu hỏi dẫn dắt: ta cần đo những gì để giải thích chuyển động?'},
- {t:'02 · Mô tả chuyển động',p:'Quãng đường cho biết độ dài đường đi; độ dịch chuyển cho biết sự thay đổi vị trí có hướng. Tốc độ trung bình = quãng đường / thời gian. Vận tốc trung bình = độ dịch chuyển / thời gian. Luôn nêu đơn vị và chiều dương.'},
- {t:'03 · Vận tốc và gia tốc',p:'Với gia tốc không đổi: v = v₀ + at; Δx = v₀t + ½at². Đồ thị vận tốc–thời gian giúp nhìn thấy vận tốc thay đổi ra sao. Hãy thử đổi v₀ và a trong mô phỏng để so sánh dự đoán với kết quả.'},
- {t:'04 · Lực giải thích sự thay đổi',p:'Định luật II Newton: tổng hợp lực ΣF = ma. Với cùng một hợp lực, vật có khối lượng nhỏ hơn sẽ có gia tốc lớn hơn. Trong phòng thí nghiệm ảo, thay đổi khối lượng và hợp lực để quan sát hướng, độ lớn gia tốc.'},
- {t:'05 · Ném ngang: từ mô hình đến dự đoán',p:'Chuyển động ném ngang là sự kết hợp của chuyển động đều theo phương ngang và rơi tự do theo phương thẳng đứng. Thời gian rơi t = √(2h/g), tầm xa L = v₀t. Khi tăng vận tốc ngang mà giữ nguyên độ cao, tầm xa tăng nhưng thời gian rơi không đổi.'},
- {t:'06 · Thực hành và kiểm chứng',p:'Quy trình khoa học: dự đoán → thay đổi một thông số → chạy mô phỏng → ghi kết quả → giải thích bằng công thức. Mô phỏng giúp hình dung quy luật nhưng không thay thế hoàn toàn thí nghiệm thực tế.'},
- {t:'07 · Kết luận & câu hỏi thảo luận',p:'Hãy nhớ ba điều: xác định đúng đại lượng và đơn vị; chọn công thức phù hợp với điều kiện bài toán; kiểm tra xem kết quả có hợp lý không. Thảo luận: nếu tăng gấp đôi vận tốc ném ngang nhưng giữ độ cao, tầm xa thay đổi thế nào?'}
+ {t:'VẬT LÍ 10 · KHÁM PHÁ THẾ GIỚI',p:'Bài thuyết trình tương tác về cách vật lí giúp con người quan sát, mô tả và giải thích các hiện tượng tự nhiên. Từ chuyển động của quả bóng đến công nghệ y tế hiện đại, vật lí luôn hiện diện quanh ta.'},
+ {t:'01 · VẬT LÍ LÀ GÌ?',p:'Vật lí học nghiên cứu vật chất, năng lượng, chuyển động và sự tương tác giữa chúng. Bằng quan sát, đo lường, xây dựng mô hình và thí nghiệm, chúng ta tìm ra quy luật để giải thích và dự đoán hiện tượng.'},
+ {t:'02 · VẬT LÍ TRONG ĐỜI SỐNG',p:'Kiến thức vật lí được ứng dụng trong giao thông, y học, truyền thông, năng lượng và sản xuất. Máy chụp MRI, internet cáp quang, pin mặt trời và các thiết bị điện tử đều gắn với những nguyên lí vật lí.'},
+ {t:'03 · CÁC LĨNH VỰC NGHIÊN CỨU',p:'Vật lí có nhiều hướng nghiên cứu như thiên văn học, vật lí hạt, vật liệu nano, laser, bán dẫn và vật lí y sinh. Mỗi lĩnh vực mở ra những cách hiểu mới về tự nhiên và tạo nền tảng cho công nghệ tương lai.'},
+ {t:'04 · PHƯƠNG PHÁP NGHIÊN CỨU',p:'Một quá trình nghiên cứu thường bắt đầu từ câu hỏi, sau đó quan sát và đề xuất giả thuyết. Nhà khoa học thiết kế phép đo hoặc thí nghiệm, phân tích dữ liệu, so sánh với dự đoán rồi rút ra kết luận.'},
+ {t:'05 · TỪ ĐẠI LƯỢNG ĐẾN CÔNG THỨC',p:'Khi mô tả chuyển động, cần phân biệt quãng đường và độ dịch chuyển; tốc độ và vận tốc. Với chuyển động thẳng biến đổi đều: v = v₀ + at và Δx = v₀t + ½at². Luôn chú ý đơn vị và điều kiện áp dụng.'},
+ {t:'06 · QUAN SÁT QUA MÔ PHỎNG',p:'Mô phỏng rơi tự do, lực, va chạm và ném ngang cho phép thay đổi thông số rồi quan sát kết quả. Hãy dự đoán trước khi chạy mô phỏng, chỉ thay đổi một đại lượng mỗi lần và giải thích kết quả bằng kiến thức đã học.'},
+ {t:'07 · KIỂM TRA VÀ VẬN DỤNG',p:'Sau khi học kiến thức, hãy dùng máy tính công thức, đồ thị và câu hỏi trắc nghiệm để tự kiểm tra. Khi giải bài tập, cần xác định dữ kiện, chọn công thức phù hợp, tính toán có đơn vị và đánh giá tính hợp lí của kết quả.'},
+ {t:'08 · KẾT LUẬN & THẢO LUẬN',p:'Vật lí không chỉ là những công thức trong sách giáo khoa mà còn là phương pháp tư duy để khám phá thế giới. Câu hỏi thảo luận: em hãy chọn một thiết bị quen thuộc và giải thích nguyên lí vật lí giúp thiết bị đó hoạt động.'}
 ]let si=0;
 function renderSlide(){const s=slides[si];$('slideTitle').textContent=s.t;$('slideBody').innerHTML='<p>'+s.p+'</p>';$('slideCount').textContent=(si+1)+' / '+slides.length;$('prevSlide').disabled=si===0;$('nextSlide').textContent=si===slides.length-1?'Quay lại đầu ↺':'Tiếp →';}
 function openPresentation(){document.body.classList.add('slide-mode');$('presentation').classList.remove('hidden');si=0;renderSlide();if(document.documentElement.requestFullscreen)document.documentElement.requestFullscreen().catch(()=>{});}
