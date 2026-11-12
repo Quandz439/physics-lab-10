@@ -730,9 +730,67 @@ body{overflow-x:hidden;background:radial-gradient(ellipse at 12% 8%,#ffe0ed 0,tr
 @media(max-width:900px){.cinematic-hero{grid-template-columns:1fr;min-height:unset;padding-top:58px}.cartoon-universe{justify-self:center;height:430px;max-width:620px}.hero-copy{max-width:760px}.day-timeline{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.cinematic-hero h1{font-size:clamp(3rem,16vw,5rem)}.cartoon-universe{height:330px;border-radius:28px}.hero-planet{width:155px;height:155px}.planet-ring{width:245px;height:90px;border-width:10px}.cartoon-rocket{transform:scale(.78) rotate(34deg);right:12%;top:18%}.floating-atom{transform:scale(.75);left:5%;bottom:12%}.hero-proof{gap:7px}.hero-proof span{font-size:.58rem}.deep-topic-grid,.day-timeline{grid-template-columns:1fr}.hero-scroll{font-size:.56rem}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* === COSMIC MOTION DESIGN SYSTEM === */
+:root{--bg:#06142d;--panel:#0b2445;--panel2:#10335b;--gold:#ffca55;--text:#f4f9ff;--muted:#b8cce2;--line:#28517a;--blue:#46c8ff;--green:#45f0c0;--pink:#ff62bd;--violet:#a58bff;--shadow:0 22px 70px #0007}
+body{background:radial-gradient(ellipse at 78% 8%,#153f70 0,transparent 36%),radial-gradient(ellipse at 5% 48%,#132d61 0,transparent 34%),linear-gradient(150deg,#06142d,#081b39 55%,#07152d);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background-image:radial-gradient(2px 2px at 12% 18%,#fff9 50%,transparent 60%),radial-gradient(1.5px 1.5px at 78% 32%,#7de7ffb8 50%,transparent 60%),radial-gradient(2px 2px at 42% 76%,#fff8 50%,transparent 60%),radial-gradient(1px 1px at 91% 83%,#ffc95e 50%,transparent 60%);background-size:270px 230px,330px 280px,390px 310px,220px 250px;animation:starDrift 55s linear infinite}
+@keyframes starDrift{to{background-position:270px 230px,-330px 280px,390px -310px,-220px 250px}}
+.cosmic-backdrop{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;opacity:.8}
+.cosmic-orbit{position:absolute;border:1px solid #62d9ff30;border-radius:50%;width:clamp(240px,42vw,650px);height:clamp(100px,16vw,240px);transform:rotate(-24deg);top:18%;right:-13%;animation:orbitDrift 26s ease-in-out infinite alternate}
+.cosmic-orbit.orbit-two{width:clamp(180px,30vw,470px);height:clamp(80px,12vw,180px);top:62%;left:-12%;right:auto;transform:rotate(28deg);border-color:#ff70c52b;animation-delay:-9s}
+.cosmic-sun{position:absolute;width:clamp(70px,10vw,150px);height:clamp(70px,10vw,150px);right:8%;top:16%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff7c9,#ffc45a 35%,#ff7e5b 72%,#ff668a);box-shadow:0 0 45px #ff9b5a55,0 0 110px #ff6e8a26;opacity:.23;animation:sunFloat 12s ease-in-out infinite}
+.cosmic-atom{position:absolute;left:6%;top:48%;width:105px;height:105px;opacity:.35;animation:atomFloat 15s ease-in-out infinite}
+.cosmic-atom i,.cosmic-atom b,.cosmic-atom em{position:absolute;inset:22px 0;border:1px solid #4ce6d0;border-radius:50%;transform:rotate(60deg)}
+.cosmic-atom b{transform:rotate(-60deg);border-color:#ff72c4}.cosmic-atom em{transform:rotate(0);border-color:#75caff}
+.cosmic-atom:after{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:#ffca55;left:48px;top:48px;box-shadow:0 0 18px #ffca55}
+.cosmic-wave{position:absolute;left:55%;top:72%;width:260px;height:90px;opacity:.2;transform:rotate(-12deg);background:repeating-radial-gradient(ellipse at 0 50%,transparent 0 12px,#4bd7ff 13px 14px,transparent 15px 24px);animation:waveFloat 18s ease-in-out infinite}
+@keyframes orbitDrift{to{translate:-28px 24px;rotate:9deg}}
+@keyframes sunFloat{50%{translate:0 22px;scale:1.06}}
+@keyframes atomFloat{50%{translate:20px -28px;rotate:24deg}}
+@keyframes waveFloat{50%{translate:-24px 18px;scale:1.08}}
+.scroll-progress{position:fixed;z-index:1000;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),var(--green),var(--pink),var(--gold));box-shadow:0 0 14px #55dfffaa}
+.topbar{background:#06142ddd;backdrop-filter:blur(18px);border-bottom:1px solid #4a83ad55}
+.brand span{color:var(--pink)}
+.navlinks a:hover{color:var(--green)}
+.hero h1 span{background:linear-gradient(100deg,#fff0a8,var(--gold) 36%,var(--pink) 78%,#9cecff);-webkit-background-clip:text;background-clip:text}
+.hero .eyebrow{border-color:#54dfff66;background:linear-gradient(90deg,#46c8ff16,#ff62bd16);box-shadow:0 0 28px #46c8ff12}
+.cartoon-universe{filter:drop-shadow(0 24px 55px #0005)}
+.card,.formula-card,.roadmap-step,.deep-topic,.science-shot,.day-timeline article,.stat{position:relative;isolation:isolate;overflow:hidden}
+.card:before,.formula-card:before,.roadmap-step:before,.deep-topic:before{content:"";position:absolute;inset:-1px;z-index:-1;opacity:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),#49dfff40,transparent 55%);transition:opacity .35s}
+.card:hover:before,.formula-card:hover:before,.roadmap-step:hover:before,.deep-topic:hover:before{opacity:1}
+.card:hover,.formula-card:hover,.roadmap-step:hover,.deep-topic:hover{border-color:#4bdfff;box-shadow:0 18px 50px #00bfff22,0 0 0 1px #ff62bd22;transform:translateY(-6px)}
+.card h3,.lesson h3,.deep-topic h3{color:#a8eaff}
+.number,.eyebrow,.roadmap-step span,.topic-index{color:var(--green)}
+.callout{border-left-color:var(--pink);background:linear-gradient(100deg,#ff62bd12,#46c8ff0b)}
+.btn{background:linear-gradient(110deg,#168ed2,#16bda9 65%,#735bdb);border:1px solid #74e5ff88;box-shadow:0 10px 30px #15a9df35}
+.btn:hover{box-shadow:0 0 28px #42d9ff88,0 12px 35px #ff62bd35;filter:brightness(1.14)}
+.btn.secondary{background:#102b4b;color:#bceeff;border-color:#4a8bb5}
+.formula,.formula-card .formula,.topic-formula{color:#ffda78;text-shadow:0 0 22px #ffc84b44}
+.formula-card{border-color:#31618b;background:linear-gradient(145deg,#0d2a4d,#0b1d38)}
+.section-head h2{background:linear-gradient(100deg,#fff,#9ceaff 55%,#ff9bd8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.scene-kicker{display:inline-flex;align-items:center;gap:9px;margin:0 0 12px;padding:6px 12px;border:1px solid #54dfff55;border-radius:999px;background:#0d3150a8;color:#8ceaff;font-size:.72rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
+.scene-kicker:before{content:"✦";color:var(--pink);font-size:1rem}
+.scene-illustration{float:right;width:68px;height:68px;margin:-5px 0 10px 18px;filter:drop-shadow(0 0 18px #46c8ff66);overflow:visible}
+.scene-illustration .scene-shape{transform-box:fill-box;transform-origin:center;animation:sceneBob 4s ease-in-out infinite}
+.scene-illustration .scene-ring{transform-box:fill-box;transform-origin:center;animation:sceneSpin 14s linear infinite}
+@keyframes sceneBob{50%{transform:translateY(-7px) rotate(5deg)}}
+@keyframes sceneSpin{to{transform:rotate(360deg)}}
+.is-awake{animation:cardPop .42s cubic-bezier(.2,1.5,.45,1);border-color:var(--pink)!important;box-shadow:0 0 0 2px #ff62bd35,0 0 38px #ff62bd44!important}
+@keyframes cardPop{40%{transform:translateY(-8px) rotate(-.6deg) scale(1.018)}70%{transform:translateY(2px) rotate(.4deg)}}
+.reveal-ready{will-change:transform,opacity}
+.section.is-active .scene-kicker{box-shadow:0 0 24px #46c8ff35}
+@media(max-width:600px){.cosmic-sun{right:-12px;top:12%}.cosmic-atom{left:-28px}.cosmic-wave{left:30%}.scene-illustration{width:52px;height:52px}}
+@media(prefers-reduced-motion:reduce){.cosmic-backdrop,.cosmic-backdrop *,.scene-illustration *{animation:none!important}.reveal-ready{opacity:1!important;transform:none!important}}
+
 </style>
 </head>
 <body>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<div class="cosmic-backdrop" aria-hidden="true">
+ <div class="cosmic-orbit"></div><div class="cosmic-orbit orbit-two"></div><div class="cosmic-sun"></div>
+ <div class="cosmic-atom"><i></i><b></b><em></em></div><div class="cosmic-wave"></div>
+</div>
 <header class="topbar"><div class="wrap nav">
 <a class="brand" href="#home">PHYSICS <span>LAB.</span></a>
 <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">☰</button>
@@ -914,6 +972,8 @@ body{overflow-x:hidden;background:radial-gradient(ellipse at 12% 8%,#ffe0ed 0,tr
 <section id="presentation" class="hidden"><div class="card slide-card"><div class="eyebrow" id="slideEyebrow">PHYSICS LAB · THUYẾT TRÌNH</div><h2 id="slideTitle">Vật lý 10: Khám phá quy luật chuyển động</h2><div id="slideBody"><p>Quan sát hiện tượng, đặt câu hỏi, xây dựng mô hình và kiểm tra bằng dữ kiện.</p></div><div class="slide-controls"><button class="btn secondary" id="prevSlide">← Trước</button><span id="slideCount" class="muted">1 / 5</span><button class="btn" id="nextSlide">Tiếp →</button><button class="iconbtn" id="exitPresentation">Thoát ✕</button></div><p class="muted" style="text-align:center">Có thể dùng phím ← và → để chuyển trang; nhấn Esc để thoát toàn màn hình.</p></div></section>
 </main>
 <footer class="footer"><div class="wrap"><span>PHYSICS LAB · Học bằng cách khám phá.</span><span>HTML · CSS · JavaScript · GitHub Pages</span></div></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
 const $=id=>document.getElementById(id);
 $('menuToggle').addEventListener('click',()=>$('navlinks').classList.toggle('open'));
@@ -964,6 +1024,60 @@ $('prevSlide').addEventListener('click',()=>{if(si>0)si--;renderSlide();});
 $('nextSlide').addEventListener('click',()=>{if(si<slides.length-1)si++;else si=0;renderSlide();});
 document.addEventListener('keydown',e=>{if(!document.body.classList.contains('slide-mode'))return;if(e.key==='Escape'){closePresentation();return;}if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();if(si<slides.length-1)si++;else si=0;renderSlide();}if(e.key==='ArrowLeft'){if(si>0)si--;renderSlide();}});
 renderQuiz();updateBest();
+
+/* === GSAP + SCROLLTRIGGER STORYTELLING === */
+(()=>{
+ const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const progress=document.getElementById('scrollProgress');
+ const updateProgress=()=>{const max=document.documentElement.scrollHeight-innerHeight; if(progress)progress.style.width=(max>0?scrollY/max*100:0)+'%';};
+ addEventListener('scroll',updateProgress,{passive:true});updateProgress();
+ const sections=[...document.querySelectorAll('main .section')];
+ const icons=[
+  '<svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="13" fill="#ffca55"/><ellipse class="scene-ring" cx="40" cy="40" rx="34" ry="13" stroke="#46c8ff" stroke-width="3"/><ellipse class="scene-ring" cx="40" cy="40" rx="34" ry="13" stroke="#ff62bd" stroke-width="2" transform="rotate(60 40 40)"/></svg>',
+  '<svg viewBox="0 0 80 80" fill="none"><path class="scene-shape" d="M12 44Q26 10 40 44T68 44" stroke="#46c8ff" stroke-width="5" stroke-linecap="round"/><path d="M12 58Q26 24 40 58T68 58" stroke="#45f0c0" stroke-width="3" stroke-linecap="round"/></svg>',
+  '<svg viewBox="0 0 80 80" fill="none"><circle class="scene-ring" cx="40" cy="40" r="27" stroke="#ff62bd" stroke-width="3" stroke-dasharray="6 5"/><path class="scene-shape" d="M40 14L47 34L67 40L47 47L40 67L33 47L13 40L33 34Z" fill="#ffca55"/></svg>',
+  '<svg viewBox="0 0 80 80" fill="none"><path class="scene-shape" d="M40 8L68 60H12L40 8Z" stroke="#45f0c0" stroke-width="4"/><circle cx="40" cy="43" r="8" fill="#ffca55"/><path d="M40 0V14M7 60L20 54M73 60L60 54" stroke="#46c8ff" stroke-width="3"/></svg>',
+  '<svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="8" fill="#ffca55"/><ellipse class="scene-ring" cx="40" cy="40" rx="34" ry="14" stroke="#46c8ff" stroke-width="3"/><ellipse class="scene-ring" cx="40" cy="40" rx="34" ry="14" stroke="#ff62bd" stroke-width="3" transform="rotate(60 40 40)"/></svg>'
+ ];
+ sections.forEach((section,i)=>{
+  const head=section.querySelector('.section-head');
+  if(!head)return;
+  const kicker=document.createElement('div');kicker.className='scene-kicker';kicker.textContent='CHƯƠNG '+String(i+1).padStart(2,'0')+' · HÀNH TRÌNH KHÁM PHÁ';
+  head.insertBefore(kicker,head.firstChild);
+  const art=document.createElement('div');art.className='scene-illustration';art.innerHTML=icons[i%icons.length];art.setAttribute('aria-hidden','true');head.appendChild(art);
+ });
+ document.querySelectorAll('.card,.formula-card,.roadmap-step,.deep-topic,.science-shot,.day-timeline article,.stat').forEach(el=>{
+  el.classList.add('reveal-ready');
+  el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();el.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');el.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');});
+  el.addEventListener('click',e=>{if(e.target.closest('button,a,input,label'))return;el.classList.remove('is-awake');void el.offsetWidth;el.classList.add('is-awake');setTimeout(()=>el.classList.remove('is-awake'),520);});
+ });
+ if(reduce)return;
+ const boot=()=>{
+  if(!window.gsap||!window.ScrollTrigger){
+   document.querySelectorAll('.reveal-ready').forEach(el=>{el.style.opacity='1';el.style.transform='none';});
+   return;
+  }
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from('.hero-copy .eyebrow',{y:25,opacity:0,duration:.8,ease:'back.out(1.8)'});
+  gsap.from('.hero h1',{y:90,opacity:0,scale:.88,rotateX:-18,duration:1.15,ease:'elastic.out(1,.72)',delay:.12});
+  gsap.from('.hero-copy .lead,.hero-copy .actions,.hero-proof',{y:32,opacity:0,stagger:.16,duration:.8,ease:'power3.out',delay:.32});
+  gsap.from('.cartoon-universe',{scale:.72,opacity:0,rotate:8,duration:1.25,ease:'elastic.out(1,.8)',delay:.2});
+  sections.forEach((section)=>{
+   const heading=section.querySelector('.section-head');
+   if(heading)gsap.from(heading,{y:55,opacity:0,duration:.85,ease:'power3.out',scrollTrigger:{trigger:section,start:'top 82%',once:true}});
+   const items=section.querySelectorAll('.card,.formula-card,.roadmap-step,.deep-topic,.science-shot,.day-timeline article');
+   if(items.length)gsap.from(items,{y:58,opacity:0,scale:.94,rotateX:5,stagger:.085,duration:.8,ease:'back.out(1.35)',scrollTrigger:{trigger:section,start:'top 76%',once:true}});
+   section.querySelectorAll('.formula,.topic-formula').forEach(formula=>gsap.from(formula,{scale:.55,opacity:0,transformOrigin:'left center',duration:.85,ease:'elastic.out(1,.65)',scrollTrigger:{trigger:formula,start:'top 88%',once:true}}));
+   ScrollTrigger.create({trigger:section,start:'top 62%',end:'bottom 38%',onEnter:()=>section.classList.add('is-active'),onEnterBack:()=>section.classList.add('is-active'),onLeave:()=>section.classList.remove('is-active'),onLeaveBack:()=>section.classList.remove('is-active')});
+  });
+  gsap.to('.cosmic-orbit',{rotation:12,duration:16,repeat:-1,yoyo:true,ease:'sine.inOut'});
+  gsap.to('.cosmic-atom',{y:-24,x:15,rotation:22,duration:9,repeat:-1,yoyo:true,ease:'sine.inOut'});
+  ScrollTrigger.refresh();
+ };
+ if(window.gsap&&window.ScrollTrigger)boot();
+ else window.addEventListener('load',boot,{once:true});
+})();
+
 </script>
 </body>
 </html>
