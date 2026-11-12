@@ -783,6 +783,10 @@ body:before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;bac
 @media(max-width:600px){.cosmic-sun{right:-12px;top:12%}.cosmic-atom{left:-28px}.cosmic-wave{left:30%}.scene-illustration{width:52px;height:52px}}
 @media(prefers-reduced-motion:reduce){.cosmic-backdrop,.cosmic-backdrop *,.scene-illustration *{animation:none!important}.reveal-ready{opacity:1!important;transform:none!important}}
 
+
+/* Keep animated cosmic artwork between the page background and content. */
+.cosmic-backdrop{z-index:0}
+body>header,body>main,body>footer{position:relative;z-index:1}
 </style>
 </head>
 <body>
