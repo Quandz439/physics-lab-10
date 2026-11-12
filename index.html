@@ -640,42 +640,149 @@ body:before{
  *,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
 
+
+/* ===== CINEMATIC CARTOON SCIENCE EXPERIENCE ===== */
+:root{--bg:#fff5f9;--panel:#fff;--panel2:#fff0f6;--gold:#d94683;--text:#39243a;--muted:#786779;--line:#f1cddd;--blue:#9875df;--green:#269d83;--shadow:0 18px 48px rgba(183,83,133,.12)}
+body{overflow-x:hidden;background:radial-gradient(ellipse at 12% 8%,#ffe0ed 0,transparent 35rem),radial-gradient(ellipse at 90% 22%,#e9dcff 0,transparent 33rem),linear-gradient(180deg,#fff8fb,#fffafd 45%,#fff3f8);color:#493047}
+.topbar{background:rgba(255,249,252,.9);border-bottom:1px solid #f2d4e2;box-shadow:0 8px 28px rgba(176,86,133,.08)}
+.navlinks a{font-weight:750;color:#755b70}.navlinks a:hover{color:#d13f83}
+.cinematic-hero{position:relative;isolation:isolate;min-height:690px;padding:clamp(55px,8vw,110px) 0 95px;display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:20px}
+.cinematic-hero:before{content:"";position:absolute;z-index:-2;inset:-30px -5vw 0;border-radius:0 0 54px 54px;background:linear-gradient(120deg,#ffe6f0 0%,#fff4fa 48%,#eee6ff 100%);box-shadow:inset 0 -1px #f2d5e5}
+.cinematic-hero:after{content:"";position:absolute;z-index:-1;width:340px;height:340px;border-radius:50%;left:-190px;bottom:-80px;background:#f7bdd6;filter:blur(55px);opacity:.42}
+.hero-copy{position:relative;z-index:2;animation:heroCopyIn .9s cubic-bezier(.2,.8,.2,1) both}
+.hero-copy .eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #f3c4d8;color:#b63b78;padding:9px 15px;border-radius:999px;font-size:.72rem;font-weight:900;letter-spacing:.09em}
+.sparkle{font-size:1.1rem;animation:sparkleSpin 4s linear infinite}
+.cinematic-hero h1{font-size:clamp(3.2rem,7.5vw,6.8rem);line-height:.98;letter-spacing:-.075em;color:#49283f;margin:28px 0 22px;text-shadow:0 5px 0 rgba(255,255,255,.65)}
+.cinematic-hero h1 span{background:linear-gradient(100deg,#e34f91 4%,#bb60b1 48%,#8e78df 100%);background-clip:text;-webkit-background-clip:text;color:transparent}
+.cinematic-hero .lead{max-width:610px;color:#775e73;font-size:clamp(1.04rem,1.5vw,1.2rem);line-height:1.85}
+.cinematic-hero .actions{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+.hero-proof{display:flex;gap:18px;flex-wrap:wrap;margin-top:35px;color:#a16d8b;font-size:.68rem;font-weight:900;letter-spacing:.06em}
+.hero-proof span{padding:8px 11px;border-radius:999px;background:#ffffffa8;border:1px solid #f2d2e1}
+.hero-scroll{position:absolute;bottom:23px;left:50%;transform:translateX(-50%);font-size:.65rem;letter-spacing:.2em;color:#aa7b98;font-weight:900;white-space:nowrap}
+.hero-scroll span{display:inline-block;margin-left:8px;animation:scrollBounce 1.5s ease-in-out infinite}
+.cartoon-universe{position:relative;height:510px;max-width:590px;width:100%;justify-self:end;overflow:hidden;border:1px solid #efc9dd;border-radius:42px;background:radial-gradient(circle at 52% 45%,#fff 0,#fce4f0 34%,#e9e0ff 75%,#f6eafa 100%);box-shadow:0 35px 80px rgba(174,92,145,.2),inset 0 0 50px #fff9;animation:universeFloat 7s ease-in-out infinite}
+.universe-glow{position:absolute;width:240px;height:240px;left:50%;top:47%;transform:translate(-50%,-50%);border-radius:50%;background:#ffb8d8;filter:blur(42px);opacity:.48;animation:glowPulse 4s ease-in-out infinite}
+.starfield{position:absolute;inset:0;background-image:radial-gradient(#d66da1 1.5px,transparent 2px),radial-gradient(#9a82db 1px,transparent 2px),radial-gradient(#fff 2px,transparent 3px);background-size:87px 91px,137px 127px,173px 163px;background-position:5px 9px,30px 40px,60px 70px;animation:starDrift 18s linear infinite}
+.starfield-b{opacity:.55;transform:rotate(24deg);animation-duration:27s}
+.planet-ring{position:absolute;width:350px;height:125px;left:50%;top:50%;transform:translate(-50%,-35%) rotate(-18deg);border:15px solid #d88ab5;border-left-color:#f5c1dc;border-right-color:#b89be7;border-radius:50%;box-shadow:0 0 25px #d88ab566;animation:ringWobble 8s ease-in-out infinite}
+.hero-planet{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);width:230px;height:230px;border-radius:50%;background:radial-gradient(circle at 32% 25%,#ffe9a9 0 5%,#f6a7bd 30%,#d875ac 65%,#9b68bd 100%);box-shadow:inset -22px -18px 35px #743e8a55,inset 12px 12px 25px #fff9,0 25px 55px #a75d9b55;animation:planetBob 5s ease-in-out infinite}
+.planet-crater{position:absolute;border-radius:50%;background:#a75b9c33;box-shadow:inset 4px 4px 8px #874b8d33}
+.crater-a{width:42px;height:24px;left:48px;top:60px;transform:rotate(-25deg)}.crater-b{width:28px;height:18px;right:45px;top:116px}.crater-c{width:18px;height:18px;left:92px;bottom:40px}
+.mini-moon{position:absolute;width:60px;height:60px;right:65px;top:76px;border-radius:50%;background:linear-gradient(145deg,#fff5b8,#f2b3c9 75%);box-shadow:0 12px 25px #a76e9b44;animation:moonOrbit 12s ease-in-out infinite}
+.orbit-dot{position:absolute;width:15px;height:15px;border-radius:50%;background:#fff;box-shadow:0 0 0 8px #fff5,0 0 20px #fff;left:18%;top:38%;animation:dotOrbit 7s ease-in-out infinite}
+.cartoon-rocket{position:absolute;right:15%;top:22%;width:68px;height:135px;border-radius:48% 48% 38% 38%;background:linear-gradient(90deg,#fff 0 22%,#f5a3c4 23% 78%,#fff 79%);border:3px solid #bc72a8;transform:rotate(34deg);filter:drop-shadow(0 12px 10px #a75d9b44);animation:rocketFly 5.5s ease-in-out infinite}
+.cartoon-rocket:before{content:"";position:absolute;top:-28px;left:7px;width:48px;height:48px;border-radius:50% 50% 10% 10%;background:linear-gradient(145deg,#fff,#e88ab5);border:3px solid #bc72a8}
+.rocket-window{position:absolute;left:20px;top:35px;width:24px;height:24px;border-radius:50%;background:linear-gradient(145deg,#a8e5ff,#7b8ed8);border:4px solid #fff;box-shadow:0 0 0 2px #bd77a9}
+.rocket-fin{position:absolute;bottom:12px;width:24px;height:42px;background:#a47cda;border:2px solid #fff}.fin-left{left:-15px;border-radius:80% 0 20% 80%;transform:rotate(20deg)}.fin-right{right:-15px;border-radius:0 80% 80% 20%;transform:rotate(-20deg)}
+.rocket-flame{position:absolute;bottom:-48px;left:19px;width:24px;height:55px;border-radius:50% 50% 60% 60%;background:linear-gradient(#fff6a8,#ff9d75 55%,transparent);filter:blur(1px);animation:flameFlicker .22s ease-in-out infinite alternate}
+.floating-atom{position:absolute;left:12%;bottom:18%;width:88px;height:88px;border:2px solid #aa8bdc;border-radius:50%;transform:rotate(35deg);animation:atomSpin 10s linear infinite}
+.floating-atom:before,.floating-atom:after{content:"";position:absolute;inset:-2px;border:2px solid #d77da9;border-radius:50%;transform:rotate(60deg) scaleX(.42)}
+.floating-atom:after{transform:rotate(-60deg) scaleX(.42)}
+.floating-atom i,.floating-atom b,.floating-atom em{position:absolute;width:10px;height:10px;border-radius:50%;background:#e45f9b;left:36px;top:36px;box-shadow:0 0 12px #e45f9b}
+.floating-label{position:absolute;padding:9px 13px;border-radius:14px;background:#ffffffd9;border:1px solid #f0c8dc;color:#a64a80;font-size:.67rem;font-weight:1000;letter-spacing:.12em;box-shadow:0 10px 22px #ad6e9630}
+.label-top{left:8%;top:16%;animation:labelBob 4s ease-in-out infinite}.label-bottom{right:7%;bottom:13%;animation:labelBob 4.8s ease-in-out infinite reverse}
+@keyframes heroCopyIn{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:translateY(0)}}
+@keyframes sparkleSpin{to{transform:rotate(360deg)}}
+@keyframes scrollBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+@keyframes universeFloat{0%,100%{transform:translateY(0) rotate(.2deg)}50%{transform:translateY(-12px) rotate(-.5deg)}}
+@keyframes glowPulse{0%,100%{opacity:.35;transform:translate(-50%,-50%) scale(.9)}50%{opacity:.7;transform:translate(-50%,-50%) scale(1.18)}}
+@keyframes starDrift{from{background-position:5px 9px,30px 40px,60px 70px}to{background-position:92px 100px,167px 167px,233px 233px}}
+@keyframes ringWobble{0%,100%{transform:translate(-50%,-35%) rotate(-18deg)}50%{transform:translate(-50%,-35%) rotate(-11deg)}}
+@keyframes planetBob{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-53%) scale(1.035)}}
+@keyframes moonOrbit{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,35px)}}
+@keyframes dotOrbit{0%,100%{transform:translate(0,0)}50%{transform:translate(70px,-45px)}}
+@keyframes rocketFly{0%,100%{transform:translate(0,0) rotate(34deg)}50%{transform:translate(-22px,-26px) rotate(22deg)}}
+@keyframes flameFlicker{from{transform:scaleY(.75);opacity:.7}to{transform:scaleY(1.15);opacity:1}}
+@keyframes atomSpin{to{transform:rotate(395deg)}}
+@keyframes labelBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.reveal-section{animation:sectionAppear .8s ease both}
+@keyframes sectionAppear{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.section h2{color:#4a2c43;letter-spacing:-.045em}
+.section-intro,.section-head p,.card p,.roadmap-step p{color:#786779}
+.card,.roadmap-step,.formula-card,.deep-topic{background:linear-gradient(145deg,#fff,#fff4f8);border:1px solid #f0d0df;border-radius:22px;box-shadow:0 13px 34px rgba(177,83,132,.09);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s}
+.card:hover,.roadmap-step:hover,.formula-card:hover,.deep-topic:hover{transform:translateY(-7px) scale(1.012);border-color:#e89abd;box-shadow:0 23px 48px rgba(177,83,132,.17)}
+.number,.pill{color:#bd3976;background:#ffebf3;border:1px solid #f2c5d9;border-radius:10px}
+.callout{background:linear-gradient(100deg,#ffeaf3,#fff8fb);border-left:4px solid #d94d8c;color:#65465e}
+.deep-topic-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.deep-topic{padding:26px;position:relative;overflow:hidden}
+.deep-topic:after{content:"";position:absolute;width:170px;height:170px;right:-85px;top:-85px;border-radius:50%;background:radial-gradient(circle,#f9cfe2,transparent 70%);opacity:.6;pointer-events:none}
+.topic-icon{font-size:2rem;margin-bottom:10px;filter:drop-shadow(0 5px 7px #d77ca955)}
+.topic-index{font-size:.7rem;letter-spacing:.13em;color:#c04b83;font-weight:950}
+.deep-topic h3{font-size:1.35rem;color:#8f356c;margin:8px 0 12px}
+.deep-topic p{color:#755f70}
+.topic-formula{display:inline-block;margin:8px 0 12px;padding:9px 17px;border-radius:13px;background:linear-gradient(100deg,#ffe5f0,#eee6ff);color:#9d4d9b;font-size:1.25rem;font-weight:900;letter-spacing:.03em}
+.topic-note{padding:12px 14px;border-left:3px solid #bd8be1;background:#f7f0ff;border-radius:0 12px 12px 0;font-size:.93rem}
+.day-timeline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;position:relative}
+.day-timeline article{padding:18px 16px;border-radius:18px;background:#fff;border:1px solid #efd0df;box-shadow:0 10px 25px #b45c8710}
+.day-timeline article span{display:inline-block;padding:6px 10px;border-radius:99px;background:#ffeaf3;color:#b33e78;font-weight:950;font-size:.8rem}
+.day-timeline h3{color:#8f356c;font-size:1rem;margin:13px 0 6px}
+.day-timeline p{color:#786779;font-size:.9rem}
+#advancedLab,#projectileLab{display:none!important}
+#presentation{position:relative}
+.slide-mode{min-height:100vh;background:radial-gradient(circle at 10% 12%,#ffb7d5b3,transparent 32rem),radial-gradient(circle at 90% 80%,#cab7ff8c,transparent 30rem),#fff7fb}
+.slide-mode #presentation{display:flex!important;min-height:100vh;padding:7vh 5vw;align-items:center;justify-content:center}
+.slide-mode .slide-card{width:min(100%,1080px);min-height:min(70vh,760px);padding:clamp(28px,7vw,88px);border:1px solid #efc7da;border-radius:32px;background:linear-gradient(145deg,#fffffff7,#ffeff7f5);box-shadow:0 35px 90px #b24f842e}
+.slide-mode .slide-card h2{color:#a83270;font-size:clamp(2.3rem,6vw,4.8rem);line-height:1.12}
+.slide-mode .slide-card p{color:#70566b;font-size:clamp(1.12rem,2vw,1.55rem);line-height:1.8}
+.btn{color:white;background:linear-gradient(120deg,#e34f91,#bd3976);border:1px solid #d64b89;box-shadow:0 9px 24px #cf438332}
+.btn.secondary{color:#a83b72;background:#fff;border-color:#edc3d7;box-shadow:none}
+.stat{background:linear-gradient(145deg,#fff,#fff3f8);border:1px solid #f1d2e0;border-radius:18px;box-shadow:0 10px 28px #b1538414}
+.stat strong{color:#c43f7d}
+@media(max-width:900px){.cinematic-hero{grid-template-columns:1fr;min-height:unset;padding-top:58px}.cartoon-universe{justify-self:center;height:430px;max-width:620px}.hero-copy{max-width:760px}.day-timeline{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.cinematic-hero h1{font-size:clamp(3rem,16vw,5rem)}.cartoon-universe{height:330px;border-radius:28px}.hero-planet{width:155px;height:155px}.planet-ring{width:245px;height:90px;border-width:10px}.cartoon-rocket{transform:scale(.78) rotate(34deg);right:12%;top:18%}.floating-atom{transform:scale(.75);left:5%;bottom:12%}.hero-proof{gap:7px}.hero-proof span{font-size:.58rem}.deep-topic-grid,.day-timeline{grid-template-columns:1fr}.hero-scroll{font-size:.56rem}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
 <header class="topbar"><div class="wrap nav">
 <a class="brand" href="#home">PHYSICS <span>LAB.</span></a>
 <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">☰</button>
-<nav class="navlinks" id="navlinks"><a href="#physics-intro">Vật lí là gì?</a><a href="#applications">Ứng dụng</a><a href="#visual-gallery">Thư viện ảnh</a><a href="#research-fields">Lĩnh vực</a><a href="#roadmap">Lộ trình trình bày</a><a href="#lessons">Nội dung</a><a href="#tools">Máy tính</a><a href="#simulator">Đồ thị</a><a href="#advancedLab">Phòng thí nghiệm</a><a href="#projectileLab">Ném ngang</a><a href="#formulaLibrary">Công thức</a><a href="#quiz">Trắc nghiệm</a></nav>
+<nav class="navlinks" id="navlinks"><a href="#physics-intro">Vật lí là gì?</a><a href="#applications">Ứng dụng</a><a href="#visual-gallery">Thư viện ảnh</a><a href="#research-fields">Lĩnh vực</a><a href="#roadmap">Lộ trình trình bày</a><a href="#deep-dive">Kiến thức trọng tâm</a><a href="#lessons">Chủ đề học tập</a><a href="#tools">Máy tính</a><a href="#simulator">Đồ thị</a><a href="#formulaLibrary">Công thức</a><a href="#quiz">Trắc nghiệm</a></nav>
 <button class="iconbtn" id="themeToggle" aria-label="Đổi giao diện">☼</button>
 </div></header>
 <main class="wrap" id="home">
-<section class="hero">
-<div><div class="eyebrow">BÀI THUYẾT TRÌNH TƯƠNG TÁC · VẬT LÍ 10</div><h1>VẬT LÝ 10.<br><span>Hiểu bản chất.</span></h1><p class="lead">Từ câu hỏi thực tế đến công thức và thí nghiệm ảo: cùng khám phá cách các quy luật vật lý giải thích thế giới xung quanh. Có thể tự học hoặc bật chế độ trình chiếu để thuyết trình trước lớp.</p><div class="actions"><button class="btn" id="startPresentation">▶ Bắt đầu bài thuyết trình</button><a class="btn secondary" href="#roadmap">Xem lộ trình ↘</a></div></div>
-<div class="orbital" aria-label="Minh họa quỹ đạo hành tinh"><div class="orbit"></div><div class="orbit two"></div><div class="planet"></div><div class="satellite"></div><div class="orbital-label">OBSERVE · EXPERIMENT · UNDERSTAND</div></div>
+<section class="hero cinematic-hero">
+ <div class="hero-copy">
+  <div class="eyebrow"><span class="sparkle">✦</span> CHUYẾN DU HÀNH KHÁM PHÁ KHOA HỌC · VẬT LÍ 10</div>
+  <h1>VŨ TRỤ<br><span>ĐẦY ĐIỀU KỲ DIỆU.</span></h1>
+  <p class="lead">Tại sao hành tinh không rơi khỏi quỹ đạo? Điều gì khiến tên lửa bay lên? Ánh sáng truyền đi như thế nào? Hãy cùng bước vào hành trình khám phá những quy luật đang vận hành thế giới quanh ta.</p>
+  <div class="actions"><button class="btn" id="startPresentation">✦ Bắt đầu chuyến khám phá</button><a class="btn secondary" href="#deep-dive">Khám phá nội dung ↓</a></div>
+  <div class="hero-proof"><span>✧ 06 CHỦ ĐỀ TRỌNG TÂM</span><span>✧ HÌNH ẢNH & MINH HỌA</span><span>✧ HỌC QUA TƯƠNG TÁC</span></div>
+ </div>
+ <div class="cartoon-universe" aria-label="Minh họa hoạt hình vũ trụ với hành tinh, tên lửa và các ngôi sao">
+  <div class="universe-glow"></div><div class="starfield starfield-a"></div><div class="starfield starfield-b"></div>
+  <div class="planet-ring"></div><div class="hero-planet"><span class="planet-crater crater-a"></span><span class="planet-crater crater-b"></span><span class="planet-crater crater-c"></span></div>
+  <div class="mini-moon"></div><div class="orbit-dot"></div>
+  <div class="cartoon-rocket"><span class="rocket-window"></span><span class="rocket-fin fin-left"></span><span class="rocket-fin fin-right"></span><span class="rocket-flame"></span></div>
+  <div class="floating-atom"><i></i><b></b><em></em></div>
+  <div class="floating-label label-top">GRAVITY ✦</div><div class="floating-label label-bottom">LET'S EXPLORE!</div>
+ </div>
+ <div class="hero-scroll">CUỘN XUỐNG ĐỂ KHÁM PHÁ <span>↓</span></div>
 </section>
 <section class="stats"><div class="stat"><strong>01</strong><span>Học qua trực quan</span></div><div class="stat"><strong>02</strong><span>Tính toán từng bước</span></div><div class="stat"><strong>03</strong><span>Luyện tập chủ động</span></div></section>
 
-<section class="section" id="physics-intro">
-  <div class="section-head"><div><div class="eyebrow">01 · Nền tảng</div><h2>Vật lí là gì?</h2><p class="section-intro">Vật lí học nghiên cứu vật chất, năng lượng, chuyển động và các quy luật chi phối sự tương tác giữa chúng. Mục tiêu là dùng quan sát, phép đo, mô hình và thí nghiệm để giải thích hiện tượng tự nhiên, đồng thời dự đoán điều có thể xảy ra.</p></div></div>
-  <div class="grid">
-    <article class="card"><div class="number">01</div><h3>Quan sát thế giới</h3><p>Từ một quả bóng rơi, âm thanh phát ra từ loa đến ánh sáng của Mặt Trời — vật lí bắt đầu bằng việc đặt câu hỏi về những gì ta nhìn thấy và đo được.</p></article>
-    <article class="card"><div class="number">02</div><h3>Tìm quy luật</h3><p>Thông qua đại lượng, đồ thị và công thức, ta mô tả mối liên hệ giữa các yếu tố như lực, khối lượng, vận tốc, năng lượng và thời gian.</p></article>
-    <article class="card"><div class="number">03</div><h3>Kiểm chứng dự đoán</h3><p>Một mô hình khoa học cần được so sánh với dữ liệu thực nghiệm. Nếu kết quả chưa phù hợp, ta xem lại phép đo, giả thiết hoặc mô hình.</p></article>
-  </div>
-  <div class="callout" style="margin-top:18px"><strong>Ghi nhớ:</strong> Vật lí không chỉ là học thuộc công thức. Điều quan trọng là hiểu đại lượng biểu thị điều gì, công thức áp dụng trong điều kiện nào và kết quả có hợp lí hay không.</div>
+<section class="section reveal-section" id="physics-intro">
+ <div class="section-head"><div><div class="eyebrow">01 · NỀN TẢNG KHOA HỌC</div><h2>Vật lí là gì?</h2>
+ <p class="section-intro">Vật lí học là ngành khoa học tự nhiên nghiên cứu vật chất, năng lượng, chuyển động và sự tương tác giữa chúng. Từ những hạt rất nhỏ cấu tạo nên vật chất đến các thiên hà khổng lồ, vật lí tìm cách mô tả thế giới bằng những quy luật có thể kiểm chứng.</p></div></div>
+ <div class="grid">
+  <article class="card"><div class="number">01 · QUAN SÁT</div><h3>Bắt đầu từ câu hỏi</h3><p>Vì sao quả bóng rơi xuống đất? Vì sao xe đang chạy phải mất một quãng đường mới dừng lại? Vì sao cầu vồng có nhiều màu? Những câu hỏi gần gũi chính là điểm khởi đầu của tư duy vật lí.</p></article>
+  <article class="card"><div class="number">02 · MÔ TẢ</div><h3>Dùng đại lượng để diễn tả</h3><p>Vật lí sử dụng các đại lượng như khối lượng, thời gian, quãng đường, vận tốc, lực và năng lượng. Mỗi đại lượng có kí hiệu, đơn vị đo và ý nghĩa riêng, giúp mô tả hiện tượng một cách rõ ràng.</p></article>
+  <article class="card"><div class="number">03 · GIẢI THÍCH</div><h3>Tìm ra quy luật</h3><p>Từ dữ liệu quan sát và thí nghiệm, các nhà khoa học xây dựng mô hình, định luật và công thức. Nhờ đó, ta không chỉ giải thích điều đã xảy ra mà còn dự đoán kết quả trong những điều kiện xác định.</p></article>
+ </div>
+ <div class="callout"><strong>Thông điệp quan trọng:</strong> Học vật lí không phải chỉ ghi nhớ công thức. Cần hiểu đại lượng biểu thị điều gì, công thức được xây dựng trong điều kiện nào và kết quả có phù hợp với thực tế hay không.</div>
 </section>
 
-<section class="section" id="applications">
-  <div class="section-head"><div><div class="eyebrow">02 · Vật lí quanh ta</div><h2>Ứng dụng của vật lí trong đời sống</h2><p class="section-intro">Những kiến thức tưởng chừng trừu tượng đang góp phần tạo nên các công nghệ quen thuộc trong học tập, y tế, giao thông, năng lượng và truyền thông.</p></div></div>
-  <div class="grid">
-    <article class="card"><div class="number">01 · CƠ HỌC</div><h3>Giao thông & xây dựng</h3><p>Phân tích lực phanh, quỹ đạo chuyển động, độ bền cầu đường và độ ổn định của công trình để nâng cao an toàn.</p></article>
-    <article class="card"><div class="number">02 · ĐIỆN TỪ</div><h3>Điện năng & thiết bị</h3><p>Động cơ điện, máy phát điện, máy biến áp và các thiết bị gia dụng hoạt động dựa trên những nguyên lí điện và từ.</p></article>
-    <article class="card"><div class="number">03 · QUANG HỌC</div><h3>Camera & internet</h3><p>Thấu kính tạo ảnh; sợi quang truyền tín hiệu bằng ánh sáng; laser được dùng trong đo đạc, sản xuất và nhiều thiết bị chính xác.</p></article>
-    <article class="card"><div class="number">04 · VẬT LÍ Y SINH</div><h3>Chẩn đoán & điều trị</h3><p>Tia X hỗ trợ chụp X-quang, MRI tạo ảnh nhờ từ trường và sóng vô tuyến, còn xạ trị sử dụng bức xạ trong điều trị một số bệnh.</p></article>
-    <article class="card"><div class="number">05 · NHIỆT HỌC</div><h3>Điều hòa & làm lạnh</h3><p>Kiến thức về nhiệt và truyền nhiệt giúp thiết kế tủ lạnh, điều hòa, hệ thống cách nhiệt và quy trình bảo quản thực phẩm.</p></article>
-    <article class="card"><div class="number">06 · VẬT LIỆU</div><h3>Chip & công nghệ mới</h3><p>Vật lí chất rắn và bán dẫn là nền tảng của chip máy tính, cảm biến, đèn LED, pin mặt trời và nhiều thiết bị thông minh.</p></article>
-  </div>
+<section class="section reveal-section" id="applications">
+ <div class="section-head"><div><div class="eyebrow">02 · KHOA HỌC QUANH TA</div><h2>Vật lí trong đời sống hằng ngày</h2>
+ <p class="section-intro">Mỗi ngày, chúng ta sử dụng hàng chục thiết bị được tạo nên từ những nguyên lí vật lí. Hãy quan sát một vài ví dụ để thấy kiến thức trong sách giáo khoa có ý nghĩa như thế nào.</p></div></div>
+ <div class="grid">
+  <article class="card"><div class="number">🚗 CƠ HỌC</div><h3>Giao thông an toàn</h3><p>Khi xe phanh gấp, quán tính khiến xe và người có xu hướng tiếp tục chuyển động. Dây an toàn giúp giữ người ngồi đúng vị trí; lốp xe và mặt đường tạo lực ma sát giúp xe giảm tốc.</p><p><strong>Kiến thức liên quan:</strong> quán tính, lực ma sát, gia tốc và định luật Newton.</p></article>
+  <article class="card"><div class="number">📱 ĐIỆN TỪ & BÁN DẪN</div><h3>Điện thoại thông minh</h3><p>Màn hình, camera, loa, micro và bộ xử lí đều dựa trên nhiều nguyên lí vật lí. Cảm biến biến đổi tác động bên ngoài thành tín hiệu điện để thiết bị nhận biết môi trường.</p><p><strong>Kiến thức liên quan:</strong> điện học, sóng điện từ và vật lí chất rắn.</p></article>
+  <article class="card"><div class="number">🏥 VẬT LÍ Y SINH</div><h3>Công nghệ chẩn đoán</h3><p>Chụp X-quang sử dụng tia X để tạo ảnh cấu trúc bên trong cơ thể. MRI sử dụng từ trường mạnh và sóng vô tuyến để thu tín hiệu, hỗ trợ tạo ảnh mô mềm.</p><p><strong>Kiến thức liên quan:</strong> sóng, bức xạ điện từ và từ trường.</p></article>
+  <article class="card"><div class="number">🌈 QUANG HỌC</div><h3>Camera và cáp quang</h3><p>Thấu kính hội tụ ánh sáng để tạo ảnh trên cảm biến camera. Cáp quang truyền dữ liệu bằng ánh sáng, cho phép gửi lượng thông tin lớn đi xa với tốc độ cao.</p><p><strong>Kiến thức liên quan:</strong> phản xạ, khúc xạ và truyền ánh sáng.</p></article>
+  <article class="card"><div class="number">❄️ NHIỆT HỌC</div><h3>Tủ lạnh và điều hòa</h3><p>Tủ lạnh không tự tạo ra cái lạnh mà chuyển nhiệt từ bên trong ra môi trường bên ngoài nhờ môi chất làm lạnh và máy nén. Điều hòa cũng vận hành dựa trên nguyên lí truyền nhiệt.</p><p><strong>Kiến thức liên quan:</strong> nhiệt năng, truyền nhiệt và chuyển thể.</p></article>
+  <article class="card"><div class="number">☀️ NĂNG LƯỢNG</div><h3>Pin mặt trời và điện gió</h3><p>Pin mặt trời chuyển đổi năng lượng ánh sáng thành điện năng. Tuabin gió biến một phần động năng của gió thành cơ năng quay, sau đó máy phát điện chuyển thành điện năng.</p><p><strong>Kiến thức liên quan:</strong> năng lượng, công suất và cảm ứng điện từ.</p></article>
+ </div>
 </section>
 
 
@@ -713,27 +820,28 @@ body:before{
   <p class="gallery-note">Ảnh minh họa được tải từ Unsplash; cần kết nối Internet để hiển thị đầy đủ.</p>
 </section>
 
-<section class="section" id="research-fields">
-  <div class="section-head"><div><div class="eyebrow">03 · Khám phá chuyên sâu</div><h2>Các lĩnh vực nghiên cứu của vật lí</h2><p class="section-intro">Vật lí có nhiều nhánh liên kết với nhau. Mỗi lĩnh vực tập trung giải quyết một nhóm câu hỏi, từ quy mô vũ trụ đến những hạt cực nhỏ.</p></div></div>
-  <div class="grid">
-    <article class="card"><h3>Thiên văn học & vũ trụ học</h3><p>Nghiên cứu các thiên thể, sự hình thành sao, thiên hà và quá trình tiến hóa của vũ trụ.</p></article>
-    <article class="card"><h3>Vật lí hạt</h3><p>Tìm hiểu các hạt cơ bản và những tương tác nền tảng cấu tạo nên vật chất.</p></article>
-    <article class="card"><h3>Vật lí nguyên tử & lượng tử</h3><p>Khám phá hành vi của vật chất và ánh sáng ở quy mô nguyên tử, phân tử và nhỏ hơn.</p></article>
-    <article class="card"><h3>Vật lí vật chất ngưng tụ</h3><p>Nghiên cứu tính chất của chất rắn, chất lỏng, siêu dẫn và vật liệu có cấu trúc đặc biệt.</p></article>
-    <article class="card"><h3>Quang học & laser</h3><p>Tìm hiểu ánh sáng và phát triển công nghệ đo lường, truyền thông, gia công chính xác.</p></article>
-    <article class="card"><h3>Vật lí y sinh</h3><p>Vận dụng nguyên lí vật lí để tạo ảnh y khoa, phân tích tín hiệu sinh học và hỗ trợ điều trị.</p></article>
-  </div>
+<section class="section reveal-section" id="research-fields">
+ <div class="section-head"><div><div class="eyebrow">03 · NHỮNG CHÂN TRỜI NGHIÊN CỨU</div><h2>Các lĩnh vực nghiên cứu của vật lí</h2><p class="section-intro">Vật lí có phạm vi nghiên cứu rất rộng. Có lĩnh vực hướng lên vũ trụ bao la, có lĩnh vực đi sâu vào thế giới vi mô, cũng có lĩnh vực tạo nên công nghệ phục vụ cuộc sống.</p></div></div>
+ <div class="grid">
+  <article class="card"><div class="number">01 · VŨ TRỤ</div><h3>Thiên văn học & vũ trụ học</h3><p>Nghiên cứu Mặt Trời, các hành tinh, ngôi sao, thiên hà và sự hình thành, tiến hóa của vũ trụ. Các nhà khoa học sử dụng kính thiên văn và phân tích ánh sáng để tìm hiểu những vật thể ở rất xa.</p></article>
+  <article class="card"><div class="number">02 · THẾ GIỚI VI MÔ</div><h3>Vật lí hạt & lượng tử</h3><p>Tìm hiểu các hạt cơ bản và cách chúng tương tác. Vật lí lượng tử mô tả những quy luật ở quy mô nguyên tử, nơi các hiện tượng có thể khác xa trực giác thường ngày.</p></article>
+  <article class="card"><div class="number">03 · VẬT LIỆU</div><h3>Vật lí chất rắn & nano</h3><p>Nghiên cứu cấu trúc và tính chất của vật liệu, chất bán dẫn, siêu dẫn và vật liệu nano. Những kết quả này góp phần phát triển chip, cảm biến và thiết bị điện tử thế hệ mới.</p></article>
+  <article class="card"><div class="number">04 · ÁNH SÁNG</div><h3>Quang học & laser</h3><p>Nghiên cứu bản chất, sự truyền và tương tác của ánh sáng với vật chất. Công nghệ laser được ứng dụng trong đo khoảng cách, truyền thông, gia công vật liệu và y học.</p></article>
+  <article class="card"><div class="number">05 · NĂNG LƯỢNG</div><h3>Vật lí hạt nhân</h3><p>Nghiên cứu cấu trúc hạt nhân nguyên tử và các quá trình biến đổi hạt nhân. Lĩnh vực này có ứng dụng trong sản xuất điện, nghiên cứu vật liệu và một số phương pháp y học.</p></article>
+  <article class="card"><div class="number">06 · CON NGƯỜI</div><h3>Vật lí y sinh</h3><p>Kết hợp kiến thức vật lí và sinh học để phát triển thiết bị chẩn đoán, tạo ảnh, đo tín hiệu sinh học và hỗ trợ các phương pháp điều trị.</p></article>
+ </div>
+ <div class="callout"><strong>Điều thú vị:</strong> Một công nghệ thường không chỉ thuộc về một lĩnh vực. Ví dụ, điện thoại thông minh kết hợp vật lí bán dẫn, điện từ học, quang học, âm học và khoa học vật liệu.</div>
 </section>
 
-<section class="section" id="scientific-method">
-  <div class="section-head"><div><div class="eyebrow">04 · Tư duy khoa học</div><h2>Vật lí được nghiên cứu như thế nào?</h2><p class="section-intro">Một quy trình đơn giản giúp biến thắc mắc thành lời giải thích có căn cứ.</p></div></div>
-  <div class="roadmap-grid">
-    <article class="roadmap-step"><span>BƯỚC 01</span><h3>Đặt câu hỏi</h3><p>Hiện tượng nào cần giải thích? Những yếu tố nào có thể ảnh hưởng?</p></article>
-    <article class="roadmap-step"><span>BƯỚC 02</span><h3>Đưa ra giả thuyết</h3><p>Dự đoán mối quan hệ giữa các đại lượng dựa trên kiến thức đã có.</p></article>
-    <article class="roadmap-step"><span>BƯỚC 03</span><h3>Đo đạc & thí nghiệm</h3><p>Thu thập dữ liệu, giữ ổn định các yếu tố không cần thay đổi và ghi rõ đơn vị.</p></article>
-    <article class="roadmap-step"><span>BƯỚC 04</span><h3>Phân tích kết quả</h3><p>Dùng bảng, đồ thị và phép tính để so sánh kết quả với dự đoán.</p></article>
-    <article class="roadmap-step"><span>BƯỚC 05</span><h3>Kết luận & cải tiến</h3><p>Nêu kết luận có căn cứ, chỉ ra sai số và đề xuất cách kiểm tra tốt hơn.</p></article>
-  </div>
+<section class="section reveal-section" id="scientific-method">
+ <div class="section-head"><div><div class="eyebrow">04 · TỪ TÒ MÒ ĐẾN KHÁM PHÁ</div><h2>Vật lí được nghiên cứu như thế nào?</h2><p class="section-intro">Khoa học không bắt đầu bằng việc đoán mò. Một kết luận đáng tin cậy cần được hình thành từ câu hỏi rõ ràng, dữ liệu và quá trình kiểm chứng.</p></div></div>
+ <div class="roadmap-grid">
+  <article class="roadmap-step"><span>BƯỚC 01 · QUAN SÁT</span><h3>Đặt câu hỏi</h3><p>Ví dụ: cùng một độ cao, vật nặng và vật nhẹ có rơi xuống đất cùng lúc không? Xác định chính xác điều cần tìm hiểu.</p></article>
+  <article class="roadmap-step"><span>BƯỚC 02 · DỰ ĐOÁN</span><h3>Đưa ra giả thuyết</h3><p>Dựa trên kiến thức đã biết để dự đoán kết quả. Giả thuyết cần có khả năng được kiểm tra bằng quan sát hoặc thí nghiệm.</p></article>
+  <article class="roadmap-step"><span>BƯỚC 03 · KIỂM TRA</span><h3>Đo đạc & thí nghiệm</h3><p>Thiết kế cách kiểm tra, xác định đại lượng cần đo, dụng cụ sử dụng và những yếu tố cần giữ ổn định.</p></article>
+  <article class="roadmap-step"><span>BƯỚC 04 · PHÂN TÍCH</span><h3>Xử lí dữ liệu</h3><p>Ghi kết quả vào bảng, tính toán, vẽ đồ thị và xem dữ liệu có phù hợp với giả thuyết hay không.</p></article>
+  <article class="roadmap-step"><span>BƯỚC 05 · KẾT LUẬN</span><h3>Giải thích & cải tiến</h3><p>Nêu kết luận dựa trên bằng chứng, chỉ ra sai số và đề xuất cách đo tốt hơn nếu cần.</p></article>
+ </div>
 </section>
 
 
@@ -746,6 +854,26 @@ body:before{
     <article class="roadmap-step"><span>04 / VẬN DỤNG</span><h3>Tính toán & giải thích</h3><p>Dùng dữ kiện để tính kết quả, nêu đơn vị và giải thích ý nghĩa vật lý.</p></article>
     <article class="roadmap-step"><span>05 / KẾT LUẬN</span><h3>Ôn tập & thảo luận</h3><p>Chốt thông điệp chính, trả lời câu hỏi và kiểm tra mức độ hiểu bài.</p></article>
   </div>
+</section><section class="section reveal-section" id="deep-dive">
+ <div class="section-head"><div><div class="eyebrow">05 · KIẾN THỨC TRỌNG TÂM</div><h2>Khám phá những chủ đề lớn của Vật lí 10</h2><p class="section-intro">Đây là phần nội dung chính của bài thuyết trình. Mỗi chủ đề gồm khái niệm cốt lõi, công thức thường gặp, ví dụ thực tế và điều cần ghi nhớ.</p></div></div>
+ <div class="deep-topic-grid">
+  <article class="deep-topic"><div class="topic-icon">🚀</div><div class="topic-index">CHỦ ĐỀ 01</div><h3>Động học – Mô tả chuyển động</h3><p>Động học nghiên cứu chuyển động mà chưa xét nguyên nhân gây ra chuyển động. Để mô tả, ta cần chọn vật làm mốc, hệ quy chiếu, mốc thời gian và chiều dương.</p><div class="topic-formula">v = v₀ + at</div><p><strong>Các khái niệm:</strong> quãng đường, độ dịch chuyển, tốc độ, vận tốc và gia tốc.</p><p><strong>Ví dụ:</strong> Khi xe tăng tốc trên đường thẳng, vận tốc thay đổi theo thời gian; độ dốc của đồ thị vận tốc – thời gian cho biết gia tốc.</p><p class="topic-note">Cần phân biệt tốc độ là đại lượng vô hướng, còn vận tốc có hướng và có thể mang giá trị âm theo quy ước.</p></article>
+  <article class="deep-topic"><div class="topic-icon">🧲</div><div class="topic-index">CHỦ ĐỀ 02</div><h3>Động lực học – Vì sao vật chuyển động?</h3><p>Động lực học tìm hiểu mối liên hệ giữa chuyển động và lực. Lực có thể làm thay đổi vận tốc, hướng chuyển động hoặc gây biến dạng cho vật.</p><div class="topic-formula">F⃗ = m a⃗</div><p><strong>Ba định luật Newton:</strong> định luật quán tính; định luật II về mối liên hệ giữa hợp lực, khối lượng và gia tốc; định luật III về lực tương tác giữa hai vật.</p><p><strong>Ví dụ:</strong> Cùng một lực đẩy, xe hàng nhẹ thường có gia tốc lớn hơn xe hàng nặng nếu bỏ qua các yếu tố khác.</p><p class="topic-note">Gia tốc cùng hướng với hợp lực. Không nhầm lực tác dụng và phản lực vì chúng đặt lên hai vật khác nhau.</p></article>
+  <article class="deep-topic"><div class="topic-icon">⚡</div><div class="topic-index">CHỦ ĐỀ 03</div><h3>Công và năng lượng – Sự biến đổi</h3><p>Công cơ học mô tả sự truyền năng lượng khi lực làm vật dịch chuyển. Năng lượng có nhiều dạng và có thể chuyển hóa từ dạng này sang dạng khác.</p><div class="topic-formula">Wđ = ½mv²</div><p><strong>Khái niệm:</strong> công, công suất, động năng, thế năng trọng trường và cơ năng.</p><p><strong>Ví dụ:</strong> Khi quả bóng rơi, thế năng trọng trường giảm trong khi động năng tăng. Nếu bỏ qua lực cản, cơ năng của hệ được bảo toàn.</p><p class="topic-note">Công suất cho biết tốc độ thực hiện công; đơn vị công là joule (J), công suất là watt (W).</p></article>
+  <article class="deep-topic"><div class="topic-icon">🎱</div><div class="topic-index">CHỦ ĐỀ 04</div><h3>Động lượng – Tương tác và va chạm</h3><p>Động lượng đặc trưng cho trạng thái chuyển động của vật, phụ thuộc vào khối lượng và vận tốc. Trong hệ cô lập, tổng động lượng được bảo toàn.</p><div class="topic-formula">p⃗ = m v⃗</div><p><strong>Ứng dụng:</strong> phân tích va chạm, chuyển động của các vật tương tác và nguyên lí hoạt động của một số hệ đẩy.</p><p><strong>Ví dụ:</strong> Khi hai xe đồ chơi va chạm, vận tốc sau va chạm phụ thuộc vào khối lượng và vận tốc ban đầu của từng xe.</p><p class="topic-note">Động lượng là đại lượng vectơ. Khi giải bài toán một chiều, cần quy ước chiều dương và giữ đúng dấu vận tốc.</p></article>
+  <article class="deep-topic"><div class="topic-icon">🌀</div><div class="topic-index">CHỦ ĐỀ 05</div><h3>Chuyển động tròn – Quỹ đạo cong</h3><p>Trong chuyển động tròn, vật luôn đổi hướng vận tốc. Ngay cả khi tốc độ không đổi, vật vẫn có gia tốc vì hướng của vận tốc thay đổi liên tục.</p><div class="topic-formula">aₕₜ = v² / r</div><p><strong>Đại lượng:</strong> chu kì, tần số, tốc độ góc, tốc độ dài và gia tốc hướng tâm.</p><p><strong>Ví dụ:</strong> Vệ tinh chuyển động quanh Trái Đất và xe đi qua khúc cua đều cần gia tốc hướng tâm để duy trì quỹ đạo cong.</p><p class="topic-note">Gia tốc hướng tâm luôn hướng vào tâm quỹ đạo; bán kính càng nhỏ thì gia tốc càng lớn nếu tốc độ giữ nguyên.</p></article>
+  <article class="deep-topic"><div class="topic-icon">📏</div><div class="topic-index">CHỦ ĐỀ 06</div><h3>Đo lường – Độ tin cậy của kết quả</h3><p>Mọi phép đo đều có độ không chắc chắn. Đo lường khoa học cần đơn vị chuẩn, dụng cụ phù hợp và cách ghi kết quả thống nhất.</p><div class="topic-formula">A = Ā ± ΔA</div><p><strong>Nội dung:</strong> hệ đơn vị SI, sai số dụng cụ, sai số ngẫu nhiên, sai số tuyệt đối và sai số tương đối.</p><p><strong>Ví dụ:</strong> Đo chiều dài nhiều lần rồi lấy giá trị trung bình giúp giảm ảnh hưởng của sai số ngẫu nhiên.</p><p class="topic-note">Không nên ghi quá nhiều chữ số có nghĩa so với độ chính xác của phép đo.</p></article>
+ </div>
+</section>
+<section class="section reveal-section" id="physics-in-a-day">
+ <div class="section-head"><div><div class="eyebrow">06 · VẬT LÍ QUANH TA</div><h2>Một ngày của bạn có bao nhiêu vật lí?</h2><p class="section-intro">Từ lúc thức dậy đến khi đi ngủ, các quy luật vật lí luôn âm thầm hoạt động.</p></div></div>
+ <div class="day-timeline">
+  <article><span>07:00</span><h3>Chuông báo thức</h3><p>Loa biến tín hiệu điện thành dao động cơ học, tạo ra sóng âm truyền đến tai.</p></article>
+  <article><span>07:30</span><h3>Đi xe đến trường</h3><p>Ma sát giữa lốp và mặt đường, lực phanh và quán tính ảnh hưởng đến chuyển động.</p></article>
+  <article><span>12:00</span><h3>Bữa trưa mát lạnh</h3><p>Tủ lạnh vận chuyển nhiệt từ bên trong ra môi trường nhờ hệ thống làm lạnh.</p></article>
+  <article><span>18:00</span><h3>Sạc điện thoại</h3><p>Năng lượng điện được truyền và tích trữ trong pin thông qua các quá trình điện hóa.</p></article>
+  <article><span>21:00</span><h3>Nhìn lên bầu trời</h3><p>Ánh sáng từ các thiên thể truyền qua không gian để đến mắt chúng ta.</p></article>
+ </div>
 </section>
 <section class="section" id="lessons"><div class="section-head"><div><div class="eyebrow">Explore topics</div><h2>Khám phá kiến thức</h2></div><input class="search" id="lessonSearch" placeholder="Tìm chủ đề..." aria-label="Tìm chủ đề bài học"></div>
 <div class="grid" id="lessonGrid">
@@ -914,15 +1042,16 @@ $('nextQuestion').addEventListener('click',()=>{if(!answered){$('quizFeedback').
 $('restartQuiz').addEventListener('click',()=>{qi=0;score=0;$('quizScore').textContent='0 / '+questions.length;$('nextQuestion').disabled=false;renderQuiz();updateBest();});
 function updateBest(){const b=localStorage.getItem('physicsLabBest');$('bestScore').textContent='Điểm tốt nhất đã lưu: '+(b===null?'chưa có':b+' / '+questions.length);}
 const slides=[
- {t:'VẬT LÍ 10 · KHÁM PHÁ THẾ GIỚI',p:'Bài thuyết trình tương tác về cách vật lí giúp con người quan sát, mô tả và giải thích các hiện tượng tự nhiên. Từ chuyển động của quả bóng đến công nghệ y tế hiện đại, vật lí luôn hiện diện quanh ta.'},
- {t:'01 · VẬT LÍ LÀ GÌ?',p:'Vật lí học nghiên cứu vật chất, năng lượng, chuyển động và sự tương tác giữa chúng. Bằng quan sát, đo lường, xây dựng mô hình và thí nghiệm, chúng ta tìm ra quy luật để giải thích và dự đoán hiện tượng.'},
- {t:'02 · VẬT LÍ TRONG ĐỜI SỐNG',p:'Kiến thức vật lí được ứng dụng trong giao thông, y học, truyền thông, năng lượng và sản xuất. Máy chụp MRI, internet cáp quang, pin mặt trời và các thiết bị điện tử đều gắn với những nguyên lí vật lí.'},
- {t:'03 · CÁC LĨNH VỰC NGHIÊN CỨU',p:'Vật lí có nhiều hướng nghiên cứu như thiên văn học, vật lí hạt, vật liệu nano, laser, bán dẫn và vật lí y sinh. Mỗi lĩnh vực mở ra những cách hiểu mới về tự nhiên và tạo nền tảng cho công nghệ tương lai.'},
- {t:'04 · PHƯƠNG PHÁP NGHIÊN CỨU',p:'Một quá trình nghiên cứu thường bắt đầu từ câu hỏi, sau đó quan sát và đề xuất giả thuyết. Nhà khoa học thiết kế phép đo hoặc thí nghiệm, phân tích dữ liệu, so sánh với dự đoán rồi rút ra kết luận.'},
- {t:'05 · TỪ ĐẠI LƯỢNG ĐẾN CÔNG THỨC',p:'Khi mô tả chuyển động, cần phân biệt quãng đường và độ dịch chuyển; tốc độ và vận tốc. Với chuyển động thẳng biến đổi đều: v = v₀ + at và Δx = v₀t + ½at². Luôn chú ý đơn vị và điều kiện áp dụng.'},
- {t:'06 · QUAN SÁT QUA MÔ PHỎNG',p:'Mô phỏng rơi tự do, lực, va chạm và ném ngang cho phép thay đổi thông số rồi quan sát kết quả. Hãy dự đoán trước khi chạy mô phỏng, chỉ thay đổi một đại lượng mỗi lần và giải thích kết quả bằng kiến thức đã học.'},
- {t:'07 · KIỂM TRA VÀ VẬN DỤNG',p:'Sau khi học kiến thức, hãy dùng máy tính công thức, đồ thị và câu hỏi trắc nghiệm để tự kiểm tra. Khi giải bài tập, cần xác định dữ kiện, chọn công thức phù hợp, tính toán có đơn vị và đánh giá tính hợp lí của kết quả.'},
- {t:'08 · KẾT LUẬN & THẢO LUẬN',p:'Vật lí không chỉ là những công thức trong sách giáo khoa mà còn là phương pháp tư duy để khám phá thế giới. Câu hỏi thảo luận: em hãy chọn một thiết bị quen thuộc và giải thích nguyên lí vật lí giúp thiết bị đó hoạt động.'}
+ {t:'VŨ TRỤ ĐẦY ĐIỀU KỲ DIỆU',p:'Chào mừng đến với hành trình khám phá Vật lí 10! Từ chuyển động của một quả bóng đến quỹ đạo của hành tinh, các quy luật vật lí giúp chúng ta hiểu thế giới vận hành như thế nào.'},
+ {t:'01 · VẬT LÍ LÀ GÌ?',p:'Vật lí học nghiên cứu vật chất, năng lượng, chuyển động và sự tương tác. Nhà khoa học sử dụng quan sát, phép đo, mô hình và thí nghiệm để tìm ra quy luật có thể kiểm chứng.'},
+ {t:'02 · VẬT LÍ Ở KHẮP MỌI NƠI',p:'Phanh xe liên quan đến ma sát và quán tính; camera liên quan đến quang học; điện thoại cần vật lí bán dẫn; máy MRI ứng dụng từ trường. Vật lí hiện diện trong những điều rất quen thuộc.'},
+ {t:'03 · NHỮNG LĨNH VỰC NGHIÊN CỨU',p:'Từ thiên văn học, vật lí hạt, lượng tử đến vật liệu nano, laser và vật lí y sinh. Các lĩnh vực kết nối với nhau để mở rộng hiểu biết và tạo ra công nghệ mới.'},
+ {t:'04 · PHƯƠNG PHÁP KHOA HỌC',p:'Một nghiên cứu bắt đầu bằng câu hỏi, tiếp đến là giả thuyết, thí nghiệm, đo đạc, phân tích dữ liệu và kết luận. Kết quả phải dựa trên bằng chứng và có thể được kiểm tra.'},
+ {t:'05 · ĐỘNG HỌC',p:'Động học mô tả chuyển động thông qua quãng đường, độ dịch chuyển, tốc độ, vận tốc và gia tốc. Với gia tốc không đổi: v = v₀ + at; Δx = v₀t + ½at².'},
+ {t:'06 · ĐỘNG LỰC HỌC',p:'Lực là nguyên nhân làm thay đổi chuyển động hoặc gây biến dạng. Định luật II Newton cho biết hợp lực tác dụng lên vật bằng khối lượng nhân gia tốc: F⃗ = m a⃗.'},
+ {t:'07 · CÔNG, NĂNG LƯỢNG VÀ ĐỘNG LƯỢNG',p:'Công là cách lực truyền năng lượng. Động năng Wđ = ½mv². Động lượng p⃗ = m v⃗; trong hệ cô lập, tổng động lượng được bảo toàn.'},
+ {t:'08 · CHUYỂN ĐỘNG TRÒN & ĐO LƯỜNG',p:'Chuyển động tròn có gia tốc hướng tâm aₕₜ = v²/r. Trong mọi phép đo, cần dùng đơn vị SI, ghi kết quả hợp lí và xem xét sai số để đánh giá độ tin cậy.'},
+ {t:'09 · KẾT LUẬN & THẢO LUẬN',p:'Vật lí không chỉ là công thức mà còn là cách đặt câu hỏi, quan sát và suy luận bằng bằng chứng. Hãy thử chọn một đồ vật quanh em và giải thích ít nhất một nguyên lí vật lí giúp nó hoạt động.'}
 ]let si=0;
 function renderSlide(){const s=slides[si];$('slideTitle').textContent=s.t;$('slideBody').innerHTML='<p>'+s.p+'</p>';$('slideCount').textContent=(si+1)+' / '+slides.length;$('prevSlide').disabled=si===0;$('nextSlide').textContent=si===slides.length-1?'Quay lại đầu ↺':'Tiếp →';}
 function openPresentation(){document.body.classList.add('slide-mode');$('presentation').classList.remove('hidden');si=0;renderSlide();if(document.documentElement.requestFullscreen)document.documentElement.requestFullscreen().catch(()=>{});}
