@@ -830,6 +830,38 @@ body>header,body>main,body>footer{position:relative;z-index:1}
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 
+
+/* ROADMAP FIX: keep all five presentation steps visible and readable */
+#roadmap .roadmap-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  align-items:stretch;
+  gap:18px;
+  width:100%;
+  overflow:visible;
+}
+#roadmap .roadmap-step{
+  display:block;
+  width:100%;
+  min-width:0;
+  min-height:210px;
+  height:auto;
+  overflow-wrap:anywhere;
+  white-space:normal;
+}
+#roadmap .roadmap-step h3,
+#roadmap .roadmap-step p{
+  overflow-wrap:anywhere;
+  word-break:normal;
+}
+@media(max-width:900px){
+  #roadmap .roadmap-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:560px){
+  #roadmap .roadmap-grid{grid-template-columns:minmax(0,1fr)}
+  #roadmap .roadmap-step{min-height:0}
+}
+
 </style>
 </head>
 <body>
