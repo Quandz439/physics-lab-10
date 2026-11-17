@@ -794,6 +794,11 @@ body>header,body>main,body>footer{position:relative;z-index:1}
   --motion-fast: 220ms;
   --motion-base: 680ms;
 }
+/* Motion budget: animate only compositor-friendly properties */
+*, *::before, *::after {
+  animation: none !important;
+  transition-property: transform, opacity !important;
+}
 @media (prefers-reduced-motion: no-preference) {
   .topbar { transition: background-color var(--motion-base) var(--motion-ease), box-shadow var(--motion-base) var(--motion-ease); }
   .navlinks a, .btn, button, .iconbtn, .quiz-option, .card, .lesson, .stat,
