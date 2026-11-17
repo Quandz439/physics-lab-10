@@ -838,10 +838,6 @@ body>header,body>main,body>footer{position:relative;z-index:1}
  <div class="cosmic-orbit"></div><div class="cosmic-orbit orbit-two"></div><div class="cosmic-sun"></div>
  <div class="cosmic-atom"><i></i><b></b><em></em></div><div class="cosmic-wave"></div>
 </div>
-<header class="topbar"><div class="wrap nav">
-<a class="brand" href="#home">PHYSICS <span>LAB.</span></a>
-<button class="iconbtn" id="themeToggle" aria-label="Đổi giao diện">☼</button>
-</div></header>
 <main class="wrap" id="home">
 <section class="hero cinematic-hero">
  <div class="hero-copy">
@@ -1021,7 +1017,6 @@ body>header,body>main,body>footer{position:relative;z-index:1}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
 const $=id=>document.getElementById(id);
-$('themeToggle').addEventListener('click',()=>{document.body.classList.toggle('dark');$('themeToggle').textContent=document.body.classList.contains('dark')?'☼':'☾';});
 $('lessonSearch').addEventListener('input',e=>{const q=e.target.value.toLocaleLowerCase('vi');document.querySelectorAll('.lesson').forEach(card=>{card.style.display=card.dataset.search.includes(q)||card.textContent.toLocaleLowerCase('vi').includes(q)?'':'none';});});
 $('calculate').addEventListener('click',()=>{
  const raw=['v0','acc','time'].map(id=>$(id).value);
